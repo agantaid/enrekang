@@ -14,9 +14,9 @@ const TourVisit = () => {
         <Box
           width={{ base: '70%', md: '100%' }}
           height={'auto'}
-          pl={{ base: '4px', md: '20px', xl: '186px' }}
+          pl={{ base: '10px', md: '20px', xl: '186px' }}
           py={{ base: '12px', md: '120px', lg: '134px' }}
-          pr={{ base: '4px', md: '20px', xl: '200px' }}
+          pr={{ base: '10px', md: '20px', xl: '200px' }}
         >
           <Flex
             direction={{ md: 'row', lg: 'row', xl: 'row' }}

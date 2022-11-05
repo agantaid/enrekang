@@ -20,13 +20,14 @@ const CariDestinasi = () => {
             <Text fontSize={{ md: '24px', lg: '40px' }} fontWeight="600">
               Find a destination that suits you
             </Text>
-            <Text mt="10px" mb="63px" fontSize={'16px'} fontWeight="400">
+            <Text mt="10px" mb="63px" fontSize={{ base: '10px', md: '16px' }} fontWeight="400">
               Lörem ipsum dis lanev nen i teleska i oneskapet proskade
             </Text>
             <Button
-              height="61px"
+              height={{ base: '34px', md: '61px' }}
               width={{ base: '148px', md: '276px' }}
               bg={'transparent'}
+              fontSize={{ base: '13px', md: '24px' }}
               border="1px solid #000000"
               _hover={{ bg: 'transparent' }}
               _active={{

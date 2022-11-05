@@ -43,12 +43,12 @@ const Hero = () => {
             size="md"
             height="48px"
             width={{ base: '100%', md: '178px' }}
-            color="#fff"
-            bgColor={'#8AD440'}
+            color={{ base: '#fff', md: '#454545' }}
+            bgColor={{ base: '#8AD440', md: 'rgba(255, 254, 254, 0.66)' }}
             borderRadius="10px"
-            _hover={{ bg: '#8AD440' }}
+            _hover={{ bg: { base: '#8AD440', md: 'rgba(255, 254, 254, 0.66)' } }}
             _active={{
-              bg: '#8AD440',
+              bg: { base: '#8AD440', md: 'rgba(255, 254, 254, 0.66)' },
               transform: 'scale(0.98)',
             }}
           >
