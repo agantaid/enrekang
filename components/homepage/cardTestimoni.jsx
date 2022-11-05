@@ -9,7 +9,7 @@ const CardTestimoni = () => {
           height={{ base: '165px', md: '443px' }}
           bgColor={'#fff'}
           shadow="xl"
-          py={{ base: '13px', md: '40px', lg: '45px' }}
+          py={{ base: '13px', md: '20px', lg: '20px', xl: '45px' }}
           pl={{ base: '11px', md: '20px', lg: '28px' }}
           pr={{ base: '13px', md: '22px', lg: '43px' }}
         >
@@ -32,9 +32,9 @@ const CardTestimoni = () => {
           </Text>
           <Stack
             direction={{ base: 'row', md: 'row', lg: 'row' }}
-            mt={{ md: '80px', lg: '80px' }}
-            ml={{ base: '0px', md: '60px', xl: '62px' }}
-            justifyContent={{ base: 'left', md: 'right' }}
+            mt={{ md: '20px', lg: '0px', xl: '80px' }}
+            ml={{ base: '0px', md: '0px', xl: '62px' }}
+            justifyContent={{ base: 'left', md: 'left', lg: 'right' }}
             spacing="15px"
           >
             <VStack spacing="4px" mb="17px">
