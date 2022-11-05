@@ -14,8 +14,17 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
             rel="stylesheet"
           />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+            rel="stylesheet"
+          />
         </Head>
-        <body style={{ fontFamily: 'Montserrat, sans-serif' }}>
+        <body style={{ fontFamily: 'Poppins' }}>
           <Main />
           <NextScript />
         </body>
