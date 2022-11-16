@@ -1,6 +1,11 @@
 import { Box, Button, Image, Text } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
+import langHome from '../homepage/lang';
 
 const CardWisata = ({ image }) => {
+  // lang
+  const { locale, locales, defaultLocale } = useRouter();
+  const { visitButton } = langHome[locale];
   return (
     <Box
       px="16px"
@@ -50,7 +55,7 @@ const CardWisata = ({ image }) => {
           transform: 'scale(0.98)',
         }}
       >
-        Selengkapnya
+        {visitButton}
       </Button>
     </Box>
   );

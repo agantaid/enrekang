@@ -1,6 +1,12 @@
 import { Box, Button, Container, Flex, Image, Text } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
+import langHome from '../homepage/lang';
 
 const CariDestinasi = () => {
+  // lang
+  const { locale, locales, defaultLocale } = useRouter();
+  const { findTitle, findDesc, findButton } = langHome[locale];
+
   return (
     <Container maxW="8xl">
       <Box px={{ md: '20px', xl: '182px' }}>
@@ -18,10 +24,10 @@ const CariDestinasi = () => {
           />
           <Box width={'374px'}>
             <Text fontSize={{ md: '24px', lg: '40px' }} fontWeight="600">
-              Find a destination that suits you
+              {findTitle}
             </Text>
             <Text mt="10px" mb="63px" fontSize={{ base: '10px', md: '16px' }} fontWeight="400">
-              Lörem ipsum dis lanev nen i teleska i oneskapet proskade
+              {findDesc}
             </Text>
             <Button
               height={{ base: '34px', md: '61px' }}
@@ -35,7 +41,7 @@ const CariDestinasi = () => {
                 transform: 'scale(0.98)',
               }}
             >
-              Find Now
+              {findButton}
             </Button>
           </Box>
         </Flex>

@@ -29,10 +29,16 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRef } from 'react';
+import { useRouter } from 'next/router';
+import langHome from '../homepage/lang';
 
-const Navbar = () => {
+const Navbar = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
+
+  // lang
+  const { locale, locales, defaultLocale, asPath } = useRouter();
+  const { title1, title2, title3, button, button2, link, local } = langHome[locale];
 
   return (
     <Flex direction={'row'} justifyContent="space-between" alignItems={'center'}>
@@ -101,10 +107,14 @@ const Navbar = () => {
               bg: 'transparent',
             }}
           >
-            ENG
+            <Link activeClassName={locale === 'en'} href={link} locale="en">
+              {button}
+            </Link>
           </MenuButton>
           <MenuList minW={'80px'}>
-            <MenuItem>IND</MenuItem>
+            <Link activeClassName={locale === 'id'} href={link} locale={local}>
+              <MenuItem>{button2}</MenuItem>
+            </Link>
           </MenuList>
         </Menu>
         <Button
@@ -160,7 +170,7 @@ const Navbar = () => {
                   <VStack spacing="22px">
                     <Link href="/" style={{ textDecoration: 'none' }}>
                       <Text fontSize={'24px'} fontWeight="700">
-                        Home
+                        {title1}
                       </Text>
                     </Link>
                     <Divider border="2px solid #C6C5C5" />
@@ -168,7 +178,7 @@ const Navbar = () => {
                   <VStack spacing="22px">
                     <Link href="/" style={{ textDecoration: 'none' }}>
                       <Text fontSize={'24px'} fontWeight="700">
-                        About Us
+                        {title2}
                       </Text>
                     </Link>
                     <Divider border="2px solid #C6C5C5" />
@@ -176,7 +186,7 @@ const Navbar = () => {
                   <VStack spacing="22px">
                     <Link href="/" style={{ textDecoration: 'none' }}>
                       <Text fontSize={'24px'} fontWeight="700">
-                        Contact
+                        {title3}
                       </Text>
                     </Link>
                     <Divider border="2px solid #C6C5C5" />
@@ -263,17 +273,17 @@ const Navbar = () => {
           <Stack direction={'row'} spacing="57px">
             <Link href="/" style={{ textDecoration: 'none' }}>
               <Text color="#fff" fontSize={'20px'} fontWeight="500" fontFamily={'Inter'}>
-                Home
+                {title1}
               </Text>
             </Link>
             <Link href="/" style={{ textDecoration: 'none' }}>
               <Text color="#fff" fontSize={'20px'} fontWeight="500" fontFamily={'Inter'}>
-                About
+                {title2}
               </Text>
             </Link>
             <Link href="/" style={{ textDecoration: 'none' }}>
               <Text color="#fff" fontSize={'20px'} fontWeight="500" fontFamily={'Inter'}>
-                Contact
+                {title3}
               </Text>
             </Link>
           </Stack>
@@ -368,10 +378,14 @@ const Navbar = () => {
                   bg: 'transparent',
                 }}
               >
-                ENG
+                <Link activeClassName={locale === 'en'} href={link} locale="en">
+                  {button}
+                </Link>
               </MenuButton>
               <MenuList>
-                <MenuItem>IND</MenuItem>
+                <Link activeClassName={locale === 'id'} href={link} locale="id">
+                  <MenuItem>{button2}</MenuItem>
+                </Link>
               </MenuList>
             </Menu>
           </InputGroup>

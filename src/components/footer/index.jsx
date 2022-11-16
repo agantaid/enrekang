@@ -1,9 +1,15 @@
 import { Box, Container, Flex, HStack, Image, Link, Stack, Text } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
+import langHome from '../homepage/lang';
 
 const Footer = () => {
+  // lang
+  const { locale, locales, defaultLocale } = useRouter();
+  const { footerDesc, footerContact } = langHome[locale];
+
   return (
     <Box height={{ base: '100%', md: '443px' }} pb="120px" width="auto" bgColor="#222222" mt="85px">
-      <Container maxW={'8xl'} pt="89px">
+      <Container maxW={'4xl'} pt="89px">
         <Flex direction={{ base: 'column', md: 'row' }} justifyContent="space-between">
           <Box>
             <Link href="/" style={{ textDecoration: 'none' }}>
@@ -17,8 +23,7 @@ const Footer = () => {
               color="#fff"
               fontWeight="400"
             >
-              Lörem ipsum nasade bens fufinade, presk: migasyn till anade och valpromenera:
-              stenodonar sper VAR preskade tvillingshoppare syna.{' '}
+              {footerDesc}
             </Text>
             <HStack spacing="32px">
               <Link>
@@ -88,7 +93,7 @@ const Footer = () => {
           </Box>
           <Box>
             <Text fontSize={'26px'} fontWeight="600" color="#fff" mb="20px">
-              Contact
+              {footerContact}
             </Text>
             <Stack direction={'column'} spacing="22px">
               <Image src="/icon-faq.png" width={'128px'} height="20px" alt="icon-faq" />

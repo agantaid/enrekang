@@ -1,7 +1,13 @@
 import { Box, Button, Image, Input, Stack, Text } from '@chakra-ui/react';
 import Navbar from '../navbar';
+import { useRouter } from 'next/router';
+import langHome from '../homepage/lang';
 
-const Hero = () => {
+const Hero = (props) => {
+  // lang
+  const { locale, locales, defaultLocale } = useRouter();
+  const { heroTitle, heroDesc, heroButton } = langHome[locale];
+
   return (
     <Box
       pl={{ base: '24px', md: '40px', xl: '182px' }}
@@ -17,7 +23,7 @@ const Hero = () => {
       <Navbar />
       <Box mt={{ base: '60px', md: '214px' }} textAlign={{ base: 'center', md: 'left' }}>
         <Text fontSize={{ base: '36px', md: '55px' }} fontWeight="800" color="#FFFEFE">
-          Discover the Beauty of New Journey
+          {heroTitle}
         </Text>
         <Text
           w={{ base: '260px', md: '524px' }}
@@ -26,8 +32,7 @@ const Hero = () => {
           color="#FFFEFE"
           lineHeight={'180%'}
         >
-          Lörem ipsum nyv resoning dissade men läshund bökrosam, pseudos i elens hypodade prerat,
-          att vaktiga hypoktigt. Påpånde fumyr hyling enas.
+          {heroDesc}
         </Text>
         <Stack direction={{ base: 'column', md: 'row' }} spacing="25px" mt="26px">
           <Input
@@ -52,7 +57,7 @@ const Hero = () => {
               transform: 'scale(0.98)',
             }}
           >
-            Get Started
+            {heroButton}
           </Button>
         </Stack>
       </Box>

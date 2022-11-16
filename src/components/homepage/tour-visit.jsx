@@ -1,6 +1,12 @@
 import { Box, Flex, Stack, Text, VStack, Image, Container } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
+import langHome from '../homepage/lang';
 
-const TourVisit = () => {
+const TourVisit = (props) => {
+  // lang
+  const { locale, locales, defaultLocale } = useRouter();
+  const { toursTitle, toursTitle1, toursTitle2, toursTitle3, toursDesc } = langHome[locale];
+
   return (
     <Container maxW="8xl">
       <Box
@@ -30,7 +36,7 @@ const TourVisit = () => {
               mt={{ base: '8px', md: '38px' }}
             >
               <Text fontWeight={'600'} fontSize={{ base: '14px', md: '26px' }}>
-                Tours that you can visit
+                {toursTitle}
               </Text>
               <Stack direction="row" spacing={'23px'}>
                 <Image
@@ -41,10 +47,10 @@ const TourVisit = () => {
                 />
                 <VStack spacing="4px" alignItems={'flex-start'}>
                   <Text fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
-                    Nature Tour
+                    {toursTitle1}
                   </Text>
                   <Text fontSize={{ base: '10px', md: '20px' }} fontWeight="400">
-                    Deskripsi tentang wisata
+                    {toursDesc}
                   </Text>
                 </VStack>
               </Stack>
@@ -57,16 +63,32 @@ const TourVisit = () => {
                 />
                 <VStack spacing="4px" alignItems={'flex-start'}>
                   <Text fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
-                    Culture Tour
+                    {toursTitle2}
                   </Text>
                   <Text fontSize={{ base: '10px', md: '20px' }} fontWeight="400">
-                    Deskripsi tentang wisata
+                    {toursDesc}
+                  </Text>
+                </VStack>
+              </Stack>
+              <Stack direction="row" spacing={'23px'}>
+                <Image
+                  src="/icon-tourist.png"
+                  width={{ base: '25px', md: '45px', lg: '62px' }}
+                  height={{ base: '20px', md: '40px', lg: '54px' }}
+                  alt="Nature Tour"
+                />
+                <VStack spacing="4px" alignItems={'flex-start'}>
+                  <Text fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
+                    {toursTitle3}
+                  </Text>
+                  <Text fontSize={{ base: '10px', md: '20px' }} fontWeight="400">
+                    {toursDesc}
                   </Text>
                 </VStack>
               </Stack>
             </Stack>
 
-            <Box width={{ md: 'auto', lg: '730px' }}>
+            <Box width={{ md: 'auto', lg: 'auto' }} mt={{ base: '40px', md: '100px', lg: '0px' }}>
               <Image
                 width={{ base: '65px', md: '214px', lg: '315px' }}
                 height={{ base: '65px', md: '214px', lg: '315px' }}

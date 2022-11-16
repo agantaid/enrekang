@@ -1,6 +1,12 @@
 import { Box, Button, Container, Flex, Image, Text } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
+import langHome from '../homepage/lang';
 
 const Download = () => {
+  // lang
+  const { locale, locales, defaultLocale } = useRouter();
+  const { downloadTitle, downloadDesc, downloadButton } = langHome[locale];
+
   return (
     <Container maxW={'8xl'} px={{ lg: '0px', xl: '183px' }}>
       <Box
@@ -9,7 +15,7 @@ const Download = () => {
         pt="83px"
         pb="43px"
         pr="40px"
-        width={'1074px'}
+        width={{ md: 'auto', lg: '1024px', xl: '1074px' }}
         height="333px"
         bgImage={'/bg-download.png'}
         bgSize="cover"
@@ -19,10 +25,16 @@ const Download = () => {
         <Flex direction={'row'} justifyContent="space-between">
           <Box>
             <Text fontSize={'40px'} fontWeight="600" color="#fff">
-              Download Now{' '}
+              {downloadTitle}
             </Text>
-            <Text mt="4px" mb="31px" fontSize={'20px'} fontWeight="500" color="#fff">
-              download now and get new experience journey
+            <Text
+              mt="4px"
+              mb="31px"
+              fontSize={{ lg: '16px', xl: '20px' }}
+              fontWeight="500"
+              color="#fff"
+            >
+              {downloadDesc}
             </Text>
             <Button
               height="52px"
@@ -36,13 +48,13 @@ const Download = () => {
                 transform: 'scale(0.98)',
               }}
             >
-              Download Now
+              {downloadButton}
             </Button>
           </Box>
           <Image
             mt="-204px"
-            ml={{ lg: '375px', xl: '569px' }}
-            width="546px"
+            ml={{ lg: '520px', xl: '569px' }}
+            width="396px"
             height={'534px'}
             src="/icon-downloadapp.png"
             position="absolute"
