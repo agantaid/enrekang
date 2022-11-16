@@ -165,7 +165,13 @@ const Navbar = (props) => {
             {/* <DrawerHeader>Create your account</DrawerHeader> */}
 
             <DrawerBody>
-              <Flex direction={'column'} px="20px" pt="46px" justifyContent={'space-between'}>
+              <Flex
+                height="96vh"
+                direction={'column'}
+                px="20px"
+                pt="46px"
+                justifyContent={'space-between'}
+              >
                 <VStack spacing="34px">
                   <VStack spacing="22px">
                     <Link href="/" style={{ textDecoration: 'none' }}>

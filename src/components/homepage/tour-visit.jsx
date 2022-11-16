@@ -88,7 +88,7 @@ const TourVisit = (props) => {
               </Stack>
             </Stack>
 
-            <Box width={{ md: 'auto', lg: 'auto' }} mt={{ base: '40px', md: '100px', lg: '0px' }}>
+            <Box width={{ md: 'auto', lg: 'auto' }} mt={{ base: '70px', md: '100px', lg: '0px' }}>
               <Image
                 width={{ base: '65px', md: '214px', lg: '315px' }}
                 height={{ base: '65px', md: '214px', lg: '315px' }}
@@ -100,7 +100,7 @@ const TourVisit = (props) => {
                 width={{ base: '65px', md: '214px', lg: '315px' }}
                 height={{ base: '65px', md: '214px', lg: '315px' }}
                 src="/culture-tour.png"
-                marginLeft={{ base: '30px', md: '126px', lg: '184px' }}
+                marginLeft={{ base: '30px', md: '60px', lg: '184px' }}
                 alt="culture tour"
                 marginTop={{ base: '42px', md: '136px' }}
                 position={'absolute'}
