@@ -100,7 +100,7 @@ const TourVisit = (props) => {
                 width={{ base: '65px', md: '214px', lg: '315px' }}
                 height={{ base: '65px', md: '214px', lg: '315px' }}
                 src="/culture-tour.png"
-                marginLeft={{ base: '30px', md: '60px', lg: '184px' }}
+                marginLeft={{ base: '20px', md: '60px', lg: '184px' }}
                 alt="culture tour"
                 marginTop={{ base: '42px', md: '136px' }}
                 position={'absolute'}

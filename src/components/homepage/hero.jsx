@@ -20,7 +20,7 @@ const Hero = (props) => {
       bgRepeat={'no-repeat'}
       bgSize="cover"
     >
-      <Navbar />
+      <Navbar pageTitle={'Home'} />
       <Box mt={{ base: '60px', md: '214px' }} textAlign={{ base: 'center', md: 'left' }}>
         <Text fontSize={{ base: '36px', md: '55px' }} fontWeight="800" color="#FFFEFE">
           {heroTitle}
