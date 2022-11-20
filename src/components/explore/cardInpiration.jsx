@@ -126,7 +126,7 @@ function CardInpiration({ image }) {
                         <Link href="#"><span className="icon-heart"></span></Link>
 					</p>
 					<p className="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his face.</p> */}
-          <Link href={'/explore'}>
+          <Link href={'/viewDestinasi'}>
             <Text className="description" fontSize={'16px'} fontWeight="600">
               Name Destination
             </Text>
