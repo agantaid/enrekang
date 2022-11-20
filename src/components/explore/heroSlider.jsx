@@ -42,15 +42,15 @@ const HeroSlider = ({ slides }) => {
               >
                 <Center height={'100vh'} width="100%">
                   <VStack spacing="20px">
-                    <Text color="#fff" fontWeight={'600'} fontSize="24px">
+                    <Text color="#fff" fontWeight={'600'} fontSize={{ base: '16px', md: '24px' }}>
                       Lörem ipsum paradysamma sorument regt suprasade dende paskapet defåneheten.
                     </Text>
                     <Link href="/">
                       <Button
-                        height="56px"
-                        width="345px"
+                        height={{ base: '40px', md: '56px' }}
+                        width={{ base: '140px', md: '345px' }}
                         fontWeight={'600'}
-                        fontSize="24px"
+                        fontSize={{ base: '16px', md: '24px' }}
                         bgColor={'rgba(138, 212, 64, 0.85)'}
                         color="#fff"
                         _hover={{ bg: 'rgba(138, 212, 64, 0.85)' }}
