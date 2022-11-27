@@ -9,6 +9,7 @@ import InspirtaionTravel from '../explore/inspirationTravel';
 import Footer from '../footer';
 import TestiSlider from './testiSlider';
 import Comment from './commen';
+import TestimonialSlider from '../homepage/testimonialSlider';
 
 const ViewDestinasi = () => {
   return (
@@ -17,7 +18,8 @@ const ViewDestinasi = () => {
       <DescDestinasi />
       <Facilities />
       <TripIdeas />
-      <TestiSlider />
+      {/* <TestiSlider /> */}
+      {/* <TestimonialSlider /> */}
       <Box mt="80px">
         <InspirtaionTravel />
       </Box>

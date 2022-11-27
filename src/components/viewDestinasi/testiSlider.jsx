@@ -12,17 +12,18 @@ const TestiSlider = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    arrows: false,
   };
 
   // lang
-  const { locale, locales, defaultLocale } = useRouter();
-  const { testiTitle } = langHome[locale];
+  // const { locale, locales, defaultLocale } = useRouter();
+  // const { testiTitle } = langHome[locale];
   return (
     <Container maxW={'8xl'}>
       <Box
         mt="65px"
         mb={{ base: '-85px', md: '-85px', lg: '0px' }}
-        // bgColor={'#F5F5F5'}
+        bgColor={'#F5F5F5'}
         py="65px"
         pl={{ base: '0px', md: '20px', xl: '202px' }}
         pr={{ base: '0px', md: '20px', xl: '167px' }}

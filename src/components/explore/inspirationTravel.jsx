@@ -1,5 +1,6 @@
 import { Box, Container, SimpleGrid, Text } from '@chakra-ui/react';
 import CardInpiration from './cardInpiration';
+import CardInspiration from './cardInspiration';
 // import "./Module.cardInpiration.css"
 
 const InspirtaionTravel = () => {
@@ -16,7 +17,12 @@ const InspirtaionTravel = () => {
         </Box>
 
         <SimpleGrid columns={{ base: 1, md: 3, lg: 4, xl: 5 }} spacing={22}>
-          <CardInpiration image={'/travel-inpirasi1.png'} />
+          <CardInspiration title={'Name Destination'} image={'/travel-inpirasi1.png'} />
+          <CardInspiration title={'Name Destination'} image={'/travel-inpirasi2.png'} />
+          <CardInspiration title={'Name Destination'} image={'/travel-inpirasi3.png'} />
+          <CardInspiration title={'Name Destination'} image={'/travel-inpirasi4.png'} />
+          <CardInspiration title={'Name Destination'} image={'/travel-inpirasi5.png'} />
+          {/* <CardInpiration image={'/travel-inpirasi1.png'} />
           <CardInpiration image={'/travel-inpirasi2.png'} />
           <CardInpiration image={'/travel-inpirasi3.png'} />
           <CardInpiration image={'/travel-inpirasi4.png'} />
@@ -25,7 +31,7 @@ const InspirtaionTravel = () => {
           <CardInpiration image={'/travel-inpirasi4.png'} />
           <CardInpiration image={'/travel-inpirasi3.png'} />
           <CardInpiration image={'/travel-inpirasi2.png'} />
-          <CardInpiration image={'/travel-inpirasi1.png'} />
+          <CardInpiration image={'/travel-inpirasi1.png'} /> */}
         </SimpleGrid>
       </Container>
     </>
