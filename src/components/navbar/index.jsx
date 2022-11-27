@@ -113,7 +113,12 @@ const Navbar = ({ pageTitle }) => {
                 bg: 'transparent',
               }}
             >
-              <Link activeClassName={locale === 'en'} href={link} locale="en">
+              <Link
+                activeClassName={locale === 'en'}
+                href={link}
+                style={{ textDecoration: 'none' }}
+                locale="en"
+              >
                 {button}
               </Link>
             </MenuButton>
@@ -409,12 +414,22 @@ const Navbar = ({ pageTitle }) => {
                     bg: 'transparent',
                   }}
                 >
-                  <Link activeClassName={locale === 'en'} href={link} locale="en">
+                  <Link
+                    activeClassName={locale === 'en'}
+                    style={{ textDecoration: 'none' }}
+                    href={link}
+                    locale="en"
+                  >
                     {button}
                   </Link>
                 </MenuButton>
                 <MenuList>
-                  <Link activeClassName={locale === 'id'} href={link} locale="id">
+                  <Link
+                    activeClassName={locale === 'id'}
+                    style={{ textDecoration: 'none' }}
+                    href={link}
+                    locale="id"
+                  >
                     <MenuItem>{button2}</MenuItem>
                   </Link>
                 </MenuList>

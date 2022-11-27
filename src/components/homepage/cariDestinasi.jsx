@@ -23,7 +23,7 @@ const CariDestinasi = () => {
             src="/icon-fin2.png"
             alt="Find Destination"
           />
-          <Box width={'374px'}>
+          <Box width={{ base: 'auto', lg: '374px' }}>
             <Text fontSize={{ md: '24px', lg: '40px' }} fontWeight="600">
               {findTitle}
             </Text>
