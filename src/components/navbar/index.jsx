@@ -25,9 +25,9 @@ import {
   Text,
   useDisclosure,
   VStack,
+  Link,
 } from '@chakra-ui/react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useRef } from 'react';
 import { useRouter } from 'next/router';
 import langHome from '../homepage/lang';
@@ -203,6 +203,14 @@ const Navbar = ({ pageTitle }) => {
                       </Link>
                       <Divider border="2px solid #C6C5C5" />
                     </VStack>
+                    <VStack spacing="22px">
+                      <Link href="/event" style={{ textDecoration: 'none' }}>
+                        <Text fontSize={'24px'} fontWeight="700">
+                          Event
+                        </Text>
+                      </Link>
+                      <Divider border="2px solid #C6C5C5" />
+                    </VStack>
                     <HStack spacing="26px">
                       <Stack>
                         <svg
@@ -285,7 +293,7 @@ const Navbar = ({ pageTitle }) => {
             </DrawerContent>
           </Drawer>
         </Hide>
-
+        {/* navbar lg */}
         <Hide below="lg">
           <Stack direction={'row'} spacing="43px">
             <Stack direction={'row'} spacing="57px">
@@ -302,6 +310,11 @@ const Navbar = ({ pageTitle }) => {
               <Link href="/" style={{ textDecoration: 'none' }}>
                 <Text color="#fff" fontSize={'20px'} fontWeight="500" fontFamily={'Inter'}>
                   {title3}
+                </Text>
+              </Link>
+              <Link href="/event" style={{ textDecoration: 'none' }}>
+                <Text color="#fff" fontSize={'20px'} fontWeight="500" fontFamily={'Inter'}>
+                  Event
                 </Text>
               </Link>
             </Stack>

@@ -25,7 +25,7 @@ const Footer = () => {
             >
               {footerDesc}
             </Text>
-            <HStack spacing="32px">
+            <HStack spacing="24px">
               <Link>
                 <svg
                   width="35"

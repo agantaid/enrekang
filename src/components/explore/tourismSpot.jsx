@@ -30,28 +30,28 @@ const TourismSpot = () => {
             justifyContent={'space-between'}
           >
             <Box
-              bgImage={'map-spot.png'}
-              bgRepeat="no-repeat"
-              bgPosition={'center'}
-              bgSize="cover"
+              // bgImage={'map-spot.png'}
+              // bgRepeat="no-repeat"
+              // bgPosition={'center'}
+              // bgSize="cover"
               width={'100%'}
-              height="541px"
+              height="364px"
             >
-              {/* <Map className={styles.homeMap} center={DEFAULT_CENTER} zoom={12}>
-                                {({ TileLayer, Marker, Popup }) => (
-                                    <>
-                                    <TileLayer
-                                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                                        attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
-                                    />
-                                    <Marker position={DEFAULT_CENTER}>
-                                        <Popup>
-                                        A pretty CSS3 popup. <br /> Easily customizable.
-                                        </Popup>
-                                    </Marker>
-                                    </>
-                                )}
-                            </Map> */}
+              <Map className={styles.homeMap} center={DEFAULT_CENTER} zoom={12}>
+                {({ TileLayer, Marker, Popup }) => (
+                  <>
+                    <TileLayer
+                      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                      attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                    />
+                    <Marker position={DEFAULT_CENTER}>
+                      <Popup>
+                        A pretty CSS3 popup. <br /> Easily customizable.
+                      </Popup>
+                    </Marker>
+                  </>
+                )}
+              </Map>
             </Box>
             <Box>
               <Text fontSize={'40px'} fontWeight="500">

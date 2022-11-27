@@ -13,7 +13,9 @@ const Comment = () => {
     >
       <Container maxW="6xl" pt="47px">
         <Box w={{ base: '100%', md: '364px' }}>
-          <Text mb="20px">Give Your Comments About This Destination</Text>
+          <Text mb="20px" fontSize={'25px'} color="#fff">
+            Give Your Comments About This Destination
+          </Text>
           <Stack direction={'column'} spacing="15px">
             <Input
               type={'text'}

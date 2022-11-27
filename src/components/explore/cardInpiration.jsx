@@ -1,5 +1,4 @@
-import { Box, Image, Text } from '@chakra-ui/react';
-import Link from 'next/link';
+import { Box, Image, Text, Link } from '@chakra-ui/react';
 // import "./Module.cardInpiration.css"
 
 function CardInpiration({ image }) {
