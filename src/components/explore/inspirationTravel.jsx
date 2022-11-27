@@ -16,7 +16,7 @@ const InspirtaionTravel = () => {
           </Text>
         </Box>
 
-        <SimpleGrid columns={{ base: 1, md: 3, lg: 4, xl: 5 }} spacing={22}>
+        <SimpleGrid justifyItems={'center'} columns={{ base: 1, md: 3, lg: 4, xl: 5 }} spacing={22}>
           <CardInspiration title={'Name Destination'} image={'/travel-inpirasi1.png'} />
           <CardInspiration title={'Name Destination'} image={'/travel-inpirasi2.png'} />
           <CardInspiration title={'Name Destination'} image={'/travel-inpirasi3.png'} />

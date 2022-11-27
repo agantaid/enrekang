@@ -14,7 +14,7 @@ const HeroSlider = ({ slides }) => {
   const { heroButton } = langExplore[locale];
 
   return (
-    <Box width={'100%'} height={{ base: '799px', md: '100vh' }}>
+    <Box width={'100%'} height={{ base: '90vh', md: '100vh' }}>
       <Box
         pl={{ base: '24px', md: '40px', xl: '182px' }}
         pr={{ base: '24px', md: '40px', xl: '123px' }}
@@ -27,20 +27,20 @@ const HeroSlider = ({ slides }) => {
       >
         <Navbar pageTitle={'Explore Maps'} />
       </Box>
-      <Carousel infiniteLoop>
+      <Carousel infiniteLoop height="516px">
         {slides.map((slide) => {
           return (
             <>
               <Box
                 width={'100%'}
-                height={{ base: '799px', md: '100vh' }}
+                height={{ base: '90vh', md: '100vh' }}
                 bgImage={slide.image}
                 bgPosition="center"
                 bgRepeat={'no-repeat'}
                 bgSize="cover"
                 key="1"
               >
-                <Center height={'100vh'} width="100%">
+                <Center height={{ base: '90vh', md: '100vh' }} width="100%">
                   <VStack spacing="20px">
                     <Text color="#fff" fontWeight={'600'} fontSize={{ base: '16px', md: '24px' }}>
                       Lörem ipsum paradysamma sorument regt suprasade dende paskapet defåneheten.

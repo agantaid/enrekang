@@ -13,7 +13,7 @@ const HeroSliderDestinasi = ({ slides }) => {
   //   const { heroButton } = langExplore[locale];
 
   return (
-    <Box width={'100%'} height={{ base: '799px', md: '100vh' }}>
+    <Box width={'100%'} height={{ base: '90vh', md: '100vh' }}>
       <Box
         pl={{ base: '24px', md: '40px', xl: '182px' }}
         pr={{ base: '24px', md: '40px', xl: '123px' }}
@@ -32,7 +32,7 @@ const HeroSliderDestinasi = ({ slides }) => {
             <>
               <Box
                 width={'100%'}
-                height={{ base: '799px', md: '100vh' }}
+                height={{ base: '90vh', md: '100vh' }}
                 bgImage={slide.image}
                 bgPosition="center"
                 bgRepeat={'no-repeat'}
