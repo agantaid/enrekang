@@ -1,10 +1,7 @@
-import { Box, Button, Center, Image, Text, VStack } from '@chakra-ui/react';
-import Link from 'next/link';
+import { Box } from '@chakra-ui/react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Navbar from '../navbar';
-import { SliderData } from '../explore/SliderData';
-import { useRouter } from 'next/router';
 
 // If you want to use your own Selectors look up the Advancaed Story book examples
 const HeroSliderDestinasi = ({ slides }) => {
