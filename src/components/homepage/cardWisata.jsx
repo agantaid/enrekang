@@ -11,7 +11,7 @@ const CardWisata = ({ image }) => {
       px="16px"
       pt={{ base: '0px', md: '16px' }}
       pb="11px"
-      width={{ base: '196px', md: '196px', lg: '275px' }}
+      width={{ base: '100%', md: '196px', lg: '275px' }}
       height={{ md: 'auto' }}
       borderRadius={'10px'}
       boxShadow="xl"

@@ -49,8 +49,12 @@ const TourVisit = (props) => {
                   <Text fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
                     {toursTitle1}
                   </Text>
-                  <Text fontSize={{ base: '10px', md: '20px' }} fontWeight="400">
-                    {toursDesc}
+                  <Text
+                    width={{ base: 'auto', lg: '372px' }}
+                    fontSize={{ base: '10px', md: '20px' }}
+                    fontWeight="400"
+                  >
+                    Wisata alam yang indah akan anda dapatkan
                   </Text>
                 </VStack>
               </Stack>
@@ -65,8 +69,12 @@ const TourVisit = (props) => {
                   <Text fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
                     {toursTitle2}
                   </Text>
-                  <Text fontSize={{ base: '10px', md: '20px' }} fontWeight="400">
-                    {toursDesc}
+                  <Text
+                    width={{ base: 'auto', lg: '372px' }}
+                    fontSize={{ base: '10px', md: '20px' }}
+                    fontWeight="400"
+                  >
+                    Wisata budaya yang beragam dan unik
                   </Text>
                 </VStack>
               </Stack>
@@ -81,8 +89,12 @@ const TourVisit = (props) => {
                   <Text fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
                     {toursTitle3}
                   </Text>
-                  <Text fontSize={{ base: '10px', md: '20px' }} fontWeight="400">
-                    {toursDesc}
+                  <Text
+                    width={{ base: 'auto', lg: '372px' }}
+                    fontSize={{ base: '10px', md: '20px' }}
+                    fontWeight="400"
+                  >
+                    Anda dapat melihat desa wisata yang asri
                   </Text>
                 </VStack>
               </Stack>
@@ -100,7 +112,7 @@ const TourVisit = (props) => {
                 width={{ base: '65px', md: '214px', lg: '315px' }}
                 height={{ base: '65px', md: '214px', lg: '315px' }}
                 src="/culture-tour.png"
-                marginLeft={{ base: '30px', md: '60px', lg: '184px' }}
+                marginLeft={{ base: '20px', md: '60px', lg: '100px' }}
                 alt="culture tour"
                 marginTop={{ base: '42px', md: '136px' }}
                 position={'absolute'}
