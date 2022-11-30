@@ -1,9 +1,8 @@
-import { Box, Button, Center, Image, Text, VStack } from '@chakra-ui/react';
+import { Box, Button, Center, Text, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Navbar from '../navbar';
-import { SliderData } from './SliderData';
 import { useRouter } from 'next/router';
 import langExplore from './lang';
 
