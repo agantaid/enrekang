@@ -1,5 +1,4 @@
 import { Box, Center, Container, Text, VStack } from '@chakra-ui/react';
-import SliderCard from '../homepage/cardWisata';
 import { useRouter } from 'next/router';
 import langHome from '../homepage/lang';
 import SliderRelatedWisata from './SliderRelatedWisata';

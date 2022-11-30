@@ -1,5 +1,4 @@
 import { Box, Container, SimpleGrid, Text } from '@chakra-ui/react';
-import CardInpiration from './cardInpiration';
 import CardInspiration from './cardInspiration';
 // import "./Module.cardInpiration.css"
 

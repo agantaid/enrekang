@@ -1,11 +1,9 @@
-import { Text } from '@chakra-ui/react';
 import Footer from '../footer';
 import HeroSlider from './heroSlider';
 import InspirtaionTravel from './inspirationTravel';
 import RelatedWisata from './relatedWisata';
-import { SliderData } from './SliderData';
+import { SliderData } from './sliderData';
 import TourismSpot from './tourismSpot';
-// import "./Module.cardInpiration.css"
 
 const Explore = () => {
   return (
