@@ -26,8 +26,9 @@ import {
   useDisclosure,
   VStack,
   Link,
+  Image,
 } from '@chakra-ui/react';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { useRef } from 'react';
 import { useRouter } from 'next/router';
 import langHome from '../homepage/lang';
@@ -49,7 +50,22 @@ const Navbar = ({ pageTitle }) => {
 
       <Flex direction={'row'} justifyContent="space-between" alignItems={'center'}>
         <Link href="/" style={{ textDecoration: 'none' }}>
-          <Image width={'60px'} height="60px" src="/logo-dispopar.png" alt="logo-dispopar" />
+          <Stack alignItems={'center'} direction={'row'} spacing="14px">
+            <Image
+              width={{ base: '60px', lg: '80px' }}
+              height={{ base: '60px', lg: '80px' }}
+              src="/logo-dispopar.png"
+              alt="logo-dispopar"
+            />
+            <Text
+              fontSize={{ base: '16px', lg: '24px' }}
+              fontWeight="600"
+              color="#fff"
+              letterSpacing={{ md: '0em', xl: '0.15em' }}
+            >
+              DISPOPAR ENREKANG
+            </Text>
+          </Stack>
         </Link>
 
         <Hide above="lg">
@@ -99,9 +115,9 @@ const Navbar = ({ pageTitle }) => {
               }
               bgColor="transparent"
               border={'2px solid #fff'}
-              width="80px"
+              width="146px"
               ml={{ base: '80px', md: '438px' }}
-              height={'19px'}
+              height={'24px'}
               px="2px"
               color="#fff"
               fontWeight={'500'}
@@ -300,8 +316,8 @@ const Navbar = ({ pageTitle }) => {
         </Hide>
         {/* navbar lg */}
         <Hide below="lg">
-          <Stack direction={'row'} spacing="43px">
-            <Stack direction={'row'} spacing="57px">
+          <Stack direction={'row'} spacing={'43px'}>
+            <Stack direction={'row'} spacing={{ lg: '18px', xl: '57px' }}>
               <Link href="/" style={{ textDecoration: 'none' }}>
                 <Text color="#fff" fontSize={'20px'} fontWeight="500" fontFamily={'Inter'}>
                   {title1}

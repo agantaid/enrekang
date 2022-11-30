@@ -58,12 +58,11 @@ const TourismSpot = () => {
                 Choose your tourism spot
               </Text>
               <Text my="8px" fontSize={'20px'} fontWeight="400">
-                Lörem ipsum paradysamma sorument regt suprasade dende paskapet defåneheten.{' '}
+                Telusuri spot menarik di kabupaten Enrekang sekarang
               </Text>
               <Select placeholder="Silahkan Pilih" size="lg" shadow={'xl'}>
-                <option value="option1">Kecamatan Duri</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
+                <option value="option1">Kecamatan Buntu Batu</option>
+                <option value="option2">Kecamatan Maiwa</option>
               </Select>
             </Box>
           </Flex>

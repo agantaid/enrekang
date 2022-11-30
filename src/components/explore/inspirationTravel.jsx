@@ -12,7 +12,7 @@ const InspirtaionTravel = () => {
             Travel Inspiration
           </Text>
           <Text fontSize={'20px'} fontWeight="400" mt="4px" mb="36px">
-            Lörem ipsum paradysamma sorument regt suprasade dende paskapet defåneheten.{' '}
+            Beberapa tempat yang bisa dijadikan inspirasi untuk dikunjungi
           </Text>
         </Box>
 

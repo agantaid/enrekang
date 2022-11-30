@@ -58,7 +58,7 @@ const Event = () => {
 
               <Box mt="25px" ml="20px">
                 <Text fontSize={'20px'} fontWeight="600">
-                  Event yang akan datang
+                  Event minggu ini
                 </Text>
                 <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="30px">
                   <CardEvent
@@ -90,7 +90,7 @@ const Event = () => {
               </Box>
               <Box mt="25px" ml="20px">
                 <Text fontSize={'20px'} fontWeight="600">
-                  Event telah di laksanakan
+                  Event yang akan datang
                 </Text>
                 <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="30px">
                   <CardEvent

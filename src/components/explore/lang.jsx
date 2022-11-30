@@ -21,7 +21,7 @@ const langExplore = {
     inspirasiButton: 'More',
     // footer
     footerDesc:
-      'Lörem ipsum nasade bens fufinade, presk: migasyn till anade och valpromenera: stenodonar sper VAR preskade tvillingshoppare syna.',
+      'Jl. Andi Pettarani 2, Ruko Sendana No 32, Kelurahan Rappocini, Kecamatan Rappocini, Kabupaten Enrekang, SUlawesi Selatan',
     footerContact: 'Contact',
   },
 
@@ -47,7 +47,7 @@ const langExplore = {
     inspirasiButton: 'Selengkapnya',
     // footer
     footerDesc:
-      'Lörem ipsum nasade bens fufinade, presk: migasyn till anade och valpromenera: stenodonar sper VAR preskade tvillingshoppare syna.',
+      'Jl. Andi Pettarani 2, Ruko Sendana No 32, Kelurahan Rappocini, Kecamatan Rappocini, Kabupaten Enrekang, SUlawesi Selatan',
     footerContact: 'Kontak',
   },
 };

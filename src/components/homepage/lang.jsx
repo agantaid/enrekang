@@ -12,7 +12,7 @@ const langHome = {
     //   hero
     heroTitle: 'Discover the Beauty of New Journey',
     heroDesc:
-      'Lörem ipsum nyv resoning dissade men läshund bökrosam, pseudos i elens hypodade prerat, att vaktiga hypoktigt. Påpånde fumyr hyling enas.',
+      'Welcome to the Enrekang Regency Tourism Information page, Explore and get a wonderful experience in Enrekang Regency tourism',
     heroButton: 'Get Started',
     // tours
     toursTitle: 'Tours that you can visit',
@@ -22,11 +22,12 @@ const langHome = {
     toursDesc: 'Description of the tour',
     // visit
     visitTitle: 'Visit Most Populer Destination',
-    visitDesc: 'Lörem ipsum dis lanev nen i teleska i oneskapet',
+    visitDesc: 'Browse popular destinations in Enrekang district',
     visitButton: 'More',
     // find
     findTitle: 'Find a destination that suits you',
-    findDesc: 'Lörem ipsum dis lanev nen i teleska i oneskapet proskade',
+    findDesc:
+      'Find a tourist spot you want to visit, lets find it now by clicking the button below',
     findButton: 'Find Now',
     // testimonial
     testiTitle: 'What they say',
@@ -36,7 +37,7 @@ const langHome = {
     downloadButton: 'Download Now',
     // footer
     footerDesc:
-      'Lörem ipsum nasade bens fufinade, presk: migasyn till anade och valpromenera: stenodonar sper VAR preskade tvillingshoppare syna.',
+      'Jl. Andi Pettarani 2, Ruko Sendana No 32, Kelurahan Rappocini, Kecamatan Rappocini, Kabupaten Enrekang, SUlawesi Selatan',
     footerContact: 'Contact',
   },
 
@@ -52,7 +53,7 @@ const langHome = {
     // hero
     heroTitle: 'Temukan Keindahan dalam Perjalanan Baru',
     heroDesc:
-      'Lörem ipsum nyv resoning dissade men läshund bökrosam, pseudos i elens hypodade prerat, att vaktiga hypoktigt. Påpånde fumyr hyling enas.',
+      'Selamat Datang Di halaman Informasi Pariwisata Kabupaten Enrekang, Jelajahi dan dapatkan pengalaman yang indah di wisata kabupaten enrekang ',
     heroButton: 'Ayo Mulai',
     // tours
     toursTitle: 'Wisata yang bisa anda kunjungi',
@@ -62,11 +63,12 @@ const langHome = {
     toursDesc: 'Deskripsi tentang wisata',
     // visit
     visitTitle: 'Kunjungi Destinasi Paling Populer',
-    visitDesc: 'Lörem ipsum dis lanev nen i teleska i oneskapet',
+    visitDesc: 'Telusuri destinasi populer yang ada di kabupaten enrekang',
     visitButton: 'Selengkapnya',
     // find
     findTitle: 'Temukan tujuan yang cocok untuk Anda',
-    findDesc: 'Lörem ipsum dis lanev nen i teleska i oneskapet proskade',
+    findDesc:
+      'Temukan tempat wisata yang ingin anda kunjungi, ayo temukan sekarang dengan mengklik tombol dibawah',
     findButton: 'Cari Sekarang',
     // testimonial
     testiTitle: 'Apa yang mereka katakan',
@@ -76,7 +78,7 @@ const langHome = {
     downloadButton: 'Unduh sekarang',
     // footer
     footerDesc:
-      'Lörem ipsum nasade bens fufinade, presk: migasyn till anade och valpromenera: stenodonar sper VAR preskade tvillingshoppare syna.',
+      'Jl. Andi Pettarani 2, Ruko Sendana No 32, Kelurahan Rappocini, Kecamatan Rappocini, Kabupaten Enrekang, SUlawesi Selatan',
     footerContact: 'Kontak',
   },
 };
