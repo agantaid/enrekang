@@ -18,8 +18,6 @@ const ViewDestinasi = () => {
       <DescDestinasi />
       <Facilities />
       <TripIdeas />
-      {/* <TestiSlider /> */}
-      {/* <TestimonialSlider /> */}
       <Box mt="80px">
         <InspirtaionTravel />
       </Box>

@@ -5,7 +5,8 @@ import langHome from '../homepage/lang';
 const TourVisit = (props) => {
   // lang
   const { locale, locales, defaultLocale } = useRouter();
-  const { toursTitle, toursTitle1, toursTitle2, toursTitle3, toursDesc } = langHome[locale];
+  const { toursTitle, toursTitle1, toursTitle2, toursTitle3, toursDesc1, toursDesc2, toursDesc3 } =
+    langHome[locale];
 
   return (
     <Container maxW="8xl">
@@ -54,7 +55,7 @@ const TourVisit = (props) => {
                     fontSize={{ base: '10px', md: '20px' }}
                     fontWeight="400"
                   >
-                    Wisata alam yang indah akan anda dapatkan
+                    {toursDesc1}
                   </Text>
                 </VStack>
               </Stack>
@@ -74,7 +75,7 @@ const TourVisit = (props) => {
                     fontSize={{ base: '10px', md: '20px' }}
                     fontWeight="400"
                   >
-                    Wisata budaya yang beragam dan unik
+                    {toursDesc2}
                   </Text>
                 </VStack>
               </Stack>
@@ -94,7 +95,7 @@ const TourVisit = (props) => {
                     fontSize={{ base: '10px', md: '20px' }}
                     fontWeight="400"
                   >
-                    Anda dapat melihat desa wisata yang asri
+                    {toursDesc3}
                   </Text>
                 </VStack>
               </Stack>

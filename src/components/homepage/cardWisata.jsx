@@ -2,10 +2,14 @@ import { Box, Button, Image, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import langHome from '../homepage/lang';
 
-const CardWisata = ({ image }) => {
-  // lang
+const CardWisata = ({ image, title = 'nama', id }) => {
+  const router = useRouter();
   const { locale, locales, defaultLocale } = useRouter();
   const { visitButton } = langHome[locale];
+
+  const handleClick = () => {
+    router.push(`/view-destinasi/${id}`);
+  };
   return (
     <Box
       px="16px"
@@ -25,9 +29,10 @@ const CardWisata = ({ image }) => {
         borderRadius={'10px'}
       />
       <Text fontSize={'16px'} fontWeight="500" my={{ base: '6px', md: '12px' }}>
-        Nama Tempat Wisata
+        {title}
       </Text>
       <Button
+        onClick={handleClick}
         rightIcon={
           <svg
             width="17"

@@ -33,7 +33,7 @@ const CardTestimoni = () => {
           <Stack
             direction={{ base: 'row', md: 'row', lg: 'row' }}
             mt={{ md: '20px', lg: '0px', xl: '80px' }}
-            ml={{ base: '0px', md: '0px', xl: '62px' }}
+            ml={{ base: '160px', md: '60px', xl: '62px' }}
             justifyContent={{ base: 'left', md: 'left', lg: 'right' }}
             spacing="15px"
           >

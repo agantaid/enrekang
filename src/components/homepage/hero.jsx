@@ -40,7 +40,7 @@ const Hero = (props) => {
           {heroDesc}
         </Text>
         <Stack direction={{ base: 'column', md: 'row' }} spacing="25px" mt="26px">
-          <Input
+          {/* <Input
             width={{ base: '100%', md: '345px' }}
             height="48px"
             type={'text'}
@@ -48,7 +48,7 @@ const Hero = (props) => {
             placeholder="example@gmail.com"
             _placeholder={{ opacity: 1, color: '#FFFEFE' }}
             border="2px solid #EAE6E6"
-          />
+          /> */}
           <Button
             size="md"
             height="48px"

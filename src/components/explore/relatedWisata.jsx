@@ -1,12 +1,7 @@
 import { Box, Center, Container, Text, VStack } from '@chakra-ui/react';
-import { useRouter } from 'next/router';
-import langHome from '../homepage/lang';
 import SliderRelatedWisata from './SliderRelatedWisata';
 
-const RelatedWisata = (props) => {
-  // lang
-  const { locale, locales, defaultLocale } = useRouter();
-  const { visitTitle, visitDesc } = langHome[locale];
+const RelatedWisata = () => {
   return (
     <Box>
       <Container maxW="8xl">

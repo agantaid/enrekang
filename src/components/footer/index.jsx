@@ -25,7 +25,7 @@ const Footer = () => {
 
   return (
     <Box height={{ base: '100%', md: '443px' }} pb="80px" width="auto" bgColor="#222222" mt="85px">
-      <Container maxW={'5xl'} pt={{ base: '20px', lg: '89px' }}>
+      <Container maxW={'5xl'} pt={{ base: '20px', lg: '40px' }}>
         <Flex
           direction={{ base: 'column', md: 'row' }}
           gap={{ base: '40px', lg: '0px' }}

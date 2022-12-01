@@ -42,7 +42,13 @@ const Comment = () => {
               _placeholderColor={{ color: '#808080' }}
             />
             <Stack direction={{ base: 'column', md: 'row' }} spacing="8px">
-              <Input type={'file'} placeholder="Add Image" />
+              <Input
+                type={'file'}
+                bgColor="#fff"
+                border={'5px solid transparent'}
+                borderColor="transparent"
+                placeholder="Add Image"
+              />
               <Button
                 height="40px"
                 width="128px"

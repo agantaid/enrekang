@@ -1,4 +1,4 @@
-const langExplore = {
+const langDestinasi = {
   en: {
     // navbar
     title1: 'Home',
@@ -6,19 +6,20 @@ const langExplore = {
     title3: 'Contact',
     button: 'ENG',
     button2: 'IND',
-    link: `/explore/id`,
+    link: `/viewDestinasi/id`,
     local: 'id',
 
     //   hero
     heroButton: 'Visit',
-    // tourismSpot
-    spotTitle: 'Choose your tourism spot',
-    spotDesc: 'Explore interesting spots in Enrekang district now',
-    spotRelate: 'Related Results',
-    // inspirasi
-    inspirasiTitle: 'Travel Inspiration',
+    // facilities
+    facilTitle: 'Available Facilities',
+    facilDesc: 'Get interesting facilities around the destination',
+
+    // ideas
+    ideasTitle: 'Destination Trip Ideas',
     inspirasiDesc: 'Some places that can be used as inspiration to visit ',
     inspirasiButton: 'More',
+
     // footer
     footerDesc:
       'Jl. Andi Pettarani 2, Sendana Ruko No 32, Rappocini Village, Rappocini District, Enrekang Regency, South Sulawesi',
@@ -32,17 +33,17 @@ const langExplore = {
     title3: 'Kontak',
     button: 'IND',
     button2: 'ENG',
-    link: `/explore/en`,
+    link: `/viewDestinasi/en`,
     local: 'en',
 
     //   hero
     heroButton: 'Kunjungi',
-    // tourismSpot
-    spotTitle: 'Pilih tempat wisata Anda',
-    spotDesc: 'Telusuri spot menarik di kabupaten Enrekang sekarang.',
-    spotRelate: 'Hasil Terkait',
-    // inspirasi
-    inspirasiTitle: 'Inspirasi Perjalanan',
+    // facilities
+    facilTitle: 'Fasilitas yang Tersedia',
+    facilDesc: 'Dapatkan Fasilitas menarik di sekitar destinasi',
+
+    // ideas
+    ideasTitle: 'Get interesting facilities around the destination',
     inspirasiDesc: 'Beberapa tempat yang bisa dijadikan inspirasi untuk dikunjungi',
     inspirasiButton: 'Selengkapnya',
     // footer
@@ -52,4 +53,4 @@ const langExplore = {
   },
 };
 
-export default langExplore;
+export default langDestinasi;
