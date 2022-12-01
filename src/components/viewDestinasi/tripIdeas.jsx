@@ -1,7 +1,17 @@
-import { Box, Container, Flex, SimpleGrid, Text } from '@chakra-ui/react';
+import axios from '@/utils/axios';
+import { Box, Container, SimpleGrid, Text } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import CardIdeas from './cardIdeas';
 
 const TripIdeas = () => {
+  const { locale } = useRouter();
+  const [trips, setTrips] = useState([]);
+
+  useEffect(() => {
+    axios.get('/api/v1/trips').then(({ data }) => setTrips(data.data));
+  }, []);
+
   return (
     <Box mb="50px">
       <Container maxW="6xl">
@@ -9,26 +19,14 @@ const TripIdeas = () => {
           Destination Trip Ideas
         </Text>
         <SimpleGrid columns={{ base: 1, md: 2, lg: 3, xl: 4 }} gap="40px">
-          <CardIdeas
-            image={'/trip-ideas1.png'}
-            title="Title Trip Idea"
-            desc={'Lörem ipsum matsvinnsbutik megase det vill säga infravis, bons, menskopp utan'}
-          />
-          <CardIdeas
-            image={'/trip-ideas2.png'}
-            title="Title Trip Idea"
-            desc={'Lörem ipsum matsvinnsbutik megase det vill säga infravis, bons, menskopp utan'}
-          />
-          <CardIdeas
-            image={'/trip-ideas3.png'}
-            title="Title Trip Idea"
-            desc={'Lörem ipsum matsvinnsbutik megase det vill säga infravis, bons, menskopp utan'}
-          />
-          <CardIdeas
-            image={'/trip-ideas4.png'}
-            title="Title Trip Idea"
-            desc={'Lörem ipsum matsvinnsbutik megase det vill säga infravis, bons, menskopp utan'}
-          />
+          {trips?.map((trip) => (
+            <CardIdeas
+              key={trip.id}
+              image={`${process.env.NEXT_PUBLIC_BACKEND_URL}/storage/images/${trip.image.name}`}
+              title={locale === 'id' ? trip.title : trip.title_en}
+              desc={locale === 'id' ? trip.desc : trip.desc_en}
+            />
+          ))}
         </SimpleGrid>
       </Container>
     </Box>

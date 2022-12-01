@@ -1,8 +1,17 @@
+import axios from '@/utils/axios';
 import { Box, Container, SimpleGrid, Text } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import CardInspiration from './cardInspiration';
-// import "./Module.cardInpiration.css"
 
 const InspirtaionTravel = () => {
+  const { locale } = useRouter();
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios.get('/api/v1/inspirations').then(({ data }) => setData(data.data));
+  }, []);
+
   return (
     <>
       <Container maxW={'6xl'} pb="54px">
@@ -14,23 +23,14 @@ const InspirtaionTravel = () => {
             Beberapa tempat yang bisa dijadikan inspirasi untuk dikunjungi
           </Text>
         </Box>
-
         <SimpleGrid justifyItems={'center'} columns={{ base: 1, md: 3, lg: 4, xl: 5 }} spacing={22}>
-          <CardInspiration title={'Name Destination'} image={'/travel-inpirasi1.png'} />
-          <CardInspiration title={'Name Destination'} image={'/travel-inpirasi2.png'} />
-          <CardInspiration title={'Name Destination'} image={'/travel-inpirasi3.png'} />
-          <CardInspiration title={'Name Destination'} image={'/travel-inpirasi4.png'} />
-          <CardInspiration title={'Name Destination'} image={'/travel-inpirasi5.png'} />
-          {/* <CardInpiration image={'/travel-inpirasi1.png'} />
-          <CardInpiration image={'/travel-inpirasi2.png'} />
-          <CardInpiration image={'/travel-inpirasi3.png'} />
-          <CardInpiration image={'/travel-inpirasi4.png'} />
-          <CardInpiration image={'/travel-inpirasi5.png'} />
-          <CardInpiration image={'/travel-inpirasi5.png'} />
-          <CardInpiration image={'/travel-inpirasi4.png'} />
-          <CardInpiration image={'/travel-inpirasi3.png'} />
-          <CardInpiration image={'/travel-inpirasi2.png'} />
-          <CardInpiration image={'/travel-inpirasi1.png'} /> */}
+          {data?.map((item) => (
+            <CardInspiration
+              key={item.id}
+              title={locale === 'id' ? item.title : item.title_en}
+              image={`${process.env.NEXT_PUBLIC_BACKEND_URL}/storage/images/${item.images[0].name}`}
+            />
+          ))}
         </SimpleGrid>
       </Container>
     </>

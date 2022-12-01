@@ -34,7 +34,7 @@ import { useRouter } from 'next/router';
 import langHome from '../homepage/lang';
 import Head from 'next/head';
 
-const Navbar = ({ pageTitle }) => {
+const Navbar = ({ pageTitle, lang }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
 
@@ -355,6 +355,7 @@ const Navbar = ({ pageTitle }) => {
                 color={'blackAlpha.600'}
               />
 
+              {/* lang setting */}
               <Menu>
                 <MenuButton
                   as={Button}

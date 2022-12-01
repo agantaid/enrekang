@@ -27,13 +27,13 @@ const HeroSlider = ({ slides }) => {
         <Navbar pageTitle={'Explore Maps'} />
       </Box>
       <Carousel infiniteLoop height="516px">
-        {slides.map((slide) => {
+        {slides?.map((slide) => {
           return (
             <>
               <Box
                 width={'100%'}
                 height={{ base: '90vh', md: '100vh' }}
-                bgImage={slide.image}
+                bgImage={`${process.env.NEXT_PUBLIC_BACKEND_URL}/storage/images/${slide.image.name}`}
                 bgPosition="center"
                 bgRepeat={'no-repeat'}
                 bgSize="cover"
@@ -42,9 +42,9 @@ const HeroSlider = ({ slides }) => {
                 <Center height={{ base: '90vh', md: '100vh' }} width="100%">
                   <VStack spacing="20px">
                     <Text color="#fff" fontWeight={'600'} fontSize={{ base: '16px', md: '24px' }}>
-                      Lörem ipsum paradysamma sorument regt suprasade dende paskapet defåneheten.
+                      {locale === 'id' ? slide.desc : slide.desc_en}
                     </Text>
-                    <Link href="/">
+                    <Link href={`/${slide.cto}`}>
                       <Button
                         height={{ base: '40px', md: '56px' }}
                         width={{ base: '140px', md: '345px' }}
@@ -63,7 +63,6 @@ const HeroSlider = ({ slides }) => {
                     </Link>
                   </VStack>
                 </Center>
-                {/* <Image position={'inherit'} src={slide.image} key='1' height="100vh" alt="hero-slider" width="800px" /> */}
               </Box>
             </>
           );

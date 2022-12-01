@@ -1,3 +1,4 @@
+import axios from '@/utils/axios';
 import {
   Box,
   Button,
@@ -14,16 +15,28 @@ import {
   Text,
 } from '@chakra-ui/react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import Map from '../explore/Map';
+import styles from '../explore/Map/Map.module.css';
 
 const DescDestinasi = () => {
+  const router = useRouter();
+  const { id } = router.query;
+  const [tourism, setTourism] = useState({});
+
+  useEffect(() => {
+    axios.get(`/api/v1/tourisms/${id}`).then(({ data }) => setTourism(data));
+  }, [id]);
+
   return (
     <Box pt="80px" pb="80px">
       <Container maxW="6xl">
         <Text fontSize={'36px'} fontWeight="700">
-          Name Destination
+          {router.locale === 'id' ? tourism?.title : tourism?.title_en}
         </Text>
         <Text mt="8px" mb="35px" fontSize={'24px'} fontWeight="500" color="#808080">
-          Name Destination
+          {router.locale === 'id' ? tourism?.sub_title : tourism?.sub_title_en}
         </Text>
         <Flex direction={{ base: 'column', lg: 'row' }} gap="34px">
           <Box textAlign={'justify'}>
@@ -34,27 +47,37 @@ const DescDestinasi = () => {
               alt="View Destinasi Description"
             />
             <Text maxW="706px" mt="20px" fontSize={'16px'} fontWeight="400" color={'#222222'}>
-              Lörem ipsum egen parade antetåna unde, för bese ågyr och parakartad i nil syledes
-              kaning. Platögen mire egosm decimina på nende behungen. Katt premogt kvasiryra av
-              mirade ber prebest inte kror akadat, kavis.
-              <br />
-              Lörem ipsum egen parade antetåna unde, för bese ågyr och parakartad i nil syledes
-              kaning. Platögen mire egosm decimina på nende behungen. Lörem ipsum egen parade
-              antetåna unde, för bese ågyr och parakartad i nil syledes kaning. Platögen mire egosm
-              decimina på nende behungen. parakartad i nil syledes kaning. Platögen mire egosm
-              decimina på nende behungen.
+              {router.locale === 'id' ? tourism?.desc : tourism?.desc_en}
             </Text>
           </Box>
-          <Box>
+          <Box width={'100%'} height="164px">
             <Card maxW="sm" bgColor="transparent">
               <CardBody>
-                <Image
-                  width={'100%'}
-                  height="291px"
-                  src="/maps-destinasi.png"
-                  alt="Maps Destinasi"
-                  borderRadius="lg"
-                />
+                <Map
+                  className={styles.homeMap}
+                  center={[
+                    parseFloat(tourism?.location?.latitude || 0),
+                    parseFloat(tourism?.location?.longitude || 0),
+                  ]}
+                  zoom={12}
+                >
+                  {({ TileLayer, Marker, Popup }) => (
+                    <>
+                      <TileLayer
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                      />
+                      <Marker
+                        position={[
+                          parseFloat(tourism?.latitude || 0),
+                          parseFloat(tourism?.longitude || 0),
+                        ]}
+                      >
+                        <Popup>{tourism?.title}</Popup>
+                      </Marker>
+                    </>
+                  )}
+                </Map>
               </CardBody>
               <Divider />
               <CardFooter>

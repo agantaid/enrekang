@@ -1,6 +1,8 @@
 import { Box, Container, Flex, Select, Text } from '@chakra-ui/react';
 import Map from './Map';
 import styles from '../explore/Map/Map.module.css';
+import { useEffect, useState } from 'react';
+import axios from '@/utils/axios';
 // import dynamic from 'next/dynamic'
 
 // const MapContainer = dynamic(()=>import('react-leaflet/MapContainer'),{
@@ -18,8 +20,12 @@ import styles from '../explore/Map/Map.module.css';
 // })
 
 const TourismSpot = () => {
-  const DEFAULT_CENTER = [38.907132, -77.036546];
-  // const position = [51.505, -0.09]
+  const [locations, setLocations] = useState([]);
+  const DEFAULT_CENTER = [-3.5631279, 119.7612];
+
+  useEffect(() => {
+    axios.get('/api/v1/locations').then(({ data }) => setLocations(data.data));
+  }, []);
   return (
     <>
       <Box pt="102px" pb="52px">
@@ -44,11 +50,14 @@ const TourismSpot = () => {
                       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                       attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     />
-                    <Marker position={DEFAULT_CENTER}>
-                      <Popup>
-                        A pretty CSS3 popup. <br /> Easily customizable.
-                      </Popup>
-                    </Marker>
+                    {locations?.map((location) => (
+                      <Marker
+                        key={location.id}
+                        position={[parseFloat(location.longitude), parseFloat(location.latitude)]}
+                      >
+                        <Popup>{location.name}</Popup>
+                      </Marker>
+                    ))}
                   </>
                 )}
               </Map>
@@ -61,8 +70,11 @@ const TourismSpot = () => {
                 Telusuri spot menarik di kabupaten Enrekang sekarang
               </Text>
               <Select placeholder="Silahkan Pilih" size="lg" shadow={'xl'}>
-                <option value="option1">Kecamatan Buntu Batu</option>
-                <option value="option2">Kecamatan Maiwa</option>
+                {locations?.map((location) => (
+                  <option key={location.id} value={location.id}>
+                    {location.name}
+                  </option>
+                ))}
               </Select>
             </Box>
           </Flex>
