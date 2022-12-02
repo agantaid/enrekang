@@ -209,7 +209,7 @@ const Navbar = ({ pageTitle, lang }) => {
                       <Divider border="2px solid #C6C5C5" />
                     </VStack>
                     <VStack spacing="22px">
-                      <Link href="/" style={{ textDecoration: 'none' }}>
+                      <Link href="#visit-populer" style={{ textDecoration: 'none' }}>
                         <Text fontSize={'24px'} fontWeight="700">
                           {title2}
                         </Text>
@@ -217,7 +217,7 @@ const Navbar = ({ pageTitle, lang }) => {
                       <Divider border="2px solid #C6C5C5" />
                     </VStack>
                     <VStack spacing="22px">
-                      <Link href="/" style={{ textDecoration: 'none' }}>
+                      <Link href="#footer" style={{ textDecoration: 'none' }}>
                         <Text fontSize={'24px'} fontWeight="700">
                           {title3}
                         </Text>
