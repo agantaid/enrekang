@@ -10,11 +10,18 @@ import Footer from '../footer';
 import TestiSlider from './testiSlider';
 import Comment from './commen';
 import TestimonialSlider from '../homepage/testimonialSlider';
+import { useEffect, useState } from 'react';
+import axios from '@/utils/axios';
 
 const ViewDestinasi = () => {
+  const [slides, setSlides] = useState([]);
+
+  useEffect(() => {
+    axios.get('/api/v1/sliders').then(({ data }) => setSlides(data.data));
+  }, []);
   return (
     <>
-      <HeroSliderDestinasi slides={SliderData} />
+      <HeroSliderDestinasi slides={slides} />
       <DescDestinasi />
       <Facilities />
       <TripIdeas />
