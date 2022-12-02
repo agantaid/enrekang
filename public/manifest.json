@@ -1,7 +1,7 @@
 {
   "name": "DISPOPAR ENREKANG",
   "short_name": "DISPOPAR ENREKANG",
-  "theme_color": "##1E1E1E",
+  "theme_color": "#1E1E1E",
   "background_color": "#ffffff",
   "display": "fullscreen",
   "orientation": "portrait",

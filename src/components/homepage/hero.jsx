@@ -1,4 +1,4 @@
-import { Box, Button, Image, Input, Stack, Text } from '@chakra-ui/react';
+import { Box, Button, Image, Input, Link, Stack, Text } from '@chakra-ui/react';
 import Navbar from '../navbar';
 import { useRouter } from 'next/router';
 import langHome from '../homepage/lang';
@@ -49,21 +49,23 @@ const Hero = (props) => {
             _placeholder={{ opacity: 1, color: '#FFFEFE' }}
             border="2px solid #EAE6E6"
           /> */}
-          <Button
-            size="md"
-            height="48px"
-            width={{ base: '100%', md: '178px' }}
-            color={{ base: '#fff', md: '#454545' }}
-            bgColor={{ base: '#8AD440', md: 'rgba(255, 254, 254, 0.66)' }}
-            borderRadius="10px"
-            _hover={{ bg: { base: '#8AD440', md: 'rgba(255, 254, 254, 0.66)' } }}
-            _active={{
-              bg: { base: '#8AD440', md: 'rgba(255, 254, 254, 0.66)' },
-              transform: 'scale(0.98)',
-            }}
-          >
-            {heroButton}
-          </Button>
+          <Link href="/explore" style={{ textDecoration: 'none' }}>
+            <Button
+              size="md"
+              height="48px"
+              width={{ base: '100%', md: '178px' }}
+              color={{ base: '#fff', md: '#454545' }}
+              bgColor={{ base: '#8AD440', md: 'rgba(255, 254, 254, 0.66)' }}
+              borderRadius="10px"
+              _hover={{ bg: { base: '#8AD440', md: 'rgba(255, 254, 254, 0.66)' } }}
+              _active={{
+                bg: { base: '#8AD440', md: 'rgba(255, 254, 254, 0.66)' },
+                transform: 'scale(0.98)',
+              }}
+            >
+              {heroButton}
+            </Button>
+          </Link>
         </Stack>
       </Box>
     </Box>

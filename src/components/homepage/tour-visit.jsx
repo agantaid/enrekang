@@ -9,7 +9,7 @@ const TourVisit = (props) => {
     langHome[locale];
 
   return (
-    <Container maxW="8xl">
+    <Container id="tours-visit" maxW="8xl">
       <Box
         width={{ base: '300px', md: '100%' }}
         bgColor="#fff"

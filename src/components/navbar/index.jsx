@@ -323,12 +323,12 @@ const Navbar = ({ pageTitle, lang }) => {
                   {title1}
                 </Text>
               </Link>
-              <Link href="/" style={{ textDecoration: 'none' }}>
+              <Link href="#visit-populer" style={{ textDecoration: 'none' }}>
                 <Text color="#fff" fontSize={'20px'} fontWeight="500" fontFamily={'Inter'}>
                   {title2}
                 </Text>
               </Link>
-              <Link href="/" style={{ textDecoration: 'none' }}>
+              <Link href="#footer" style={{ textDecoration: 'none' }}>
                 <Text color="#fff" fontSize={'20px'} fontWeight="500" fontFamily={'Inter'}>
                   {title3}
                 </Text>
