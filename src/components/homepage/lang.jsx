@@ -39,7 +39,7 @@ const langHome = {
     downloadButton: 'Download Now',
     // footer
     footerDesc:
-      'Jl. Andi Pettarani 2, Sendana Ruko No 32, Rappocini Village, Rappocini District, Enrekang Regency, South Sulawesi',
+      'Jl. Pancaitana Bunga Walie No.4 Galonta Ward, Enrekang District, Enrekang Regency, South Sulawesi',
     footerContact: 'Contact',
   },
 
@@ -82,7 +82,7 @@ const langHome = {
     downloadButton: 'Unduh sekarang',
     // footer
     footerDesc:
-      'Jl. Andi Pettarani 2, Ruko Sendana No 32, Kelurahan Rappocini, Kecamatan Rappocini, Kabupaten Enrekang, SUlawesi Selatan',
+      'Jl. Pancaitana Bunga Walie, No.4 Galonta Ward, Kabupaten Enrekang, Kota Enrekanag, Sulawesi Selatan',
     footerContact: 'Kontak',
   },
 };

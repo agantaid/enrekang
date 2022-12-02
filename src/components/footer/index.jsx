@@ -54,7 +54,7 @@ const Footer = () => {
             </Text>
             <HStack spacing="16px" mb="24px">
               {/* instagram */}
-              <Link href="https://www.instagram.com">
+              <Link href="https://instagram.com/dispoparenrekang?igshid=ZmVmZTY5ZGE=">
                 <svg
                   width="24"
                   height="24"
@@ -68,7 +68,7 @@ const Footer = () => {
                   />
                 </svg>
               </Link>
-              <Link href="https://www.facebook.com">
+              <Link href="https://www.facebook.com/profile.php?id=100070318663005&mibextid=ZbWKwL">
                 {/* facebook */}
                 <svg
                   width="24"
@@ -83,7 +83,7 @@ const Footer = () => {
                   />
                 </svg>
               </Link>
-              <Link href="https://www.youtube.com">
+              <Link href="https://youtube.com/@dispoparenrekang7377">
                 {/* youtube */}
                 <svg
                   width="24"
@@ -139,7 +139,7 @@ const Footer = () => {
                       </svg>
                     </Stack>
                     <Text color="#FFFEFE" fontSize={'15px'} fontWeight="500">
-                      +62 888 0000 000{' '}
+                      +62 811-4697-0000
                     </Text>
                   </HStack>
                 </Link>
@@ -160,7 +160,7 @@ const Footer = () => {
                       </svg>
                     </Stack>
                     <Text color="#FFFEFE" fontSize={'15px'} fontWeight="500">
-                      Example@gmail.com
+                      enrekangdispopar@gmail.com
                     </Text>
                   </HStack>
                 </Link>
@@ -183,21 +183,7 @@ const Footer = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                </AccordionPanel>
-              </AccordionItem>
-
-              <AccordionItem>
-                <h2>
-                  <AccordionButton>
-                    <Box flex="1" textAlign="left">
-                      Apa tujuan dispopar memberikan TIC ?
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel pb={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                  Dinas yang bergerak di bidang kepemudaan, olahraga dan pariwisata di kab.enrekang
                 </AccordionPanel>
               </AccordionItem>
 
@@ -211,7 +197,8 @@ const Footer = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                  Aman karena sudah menggunakan SSL adalah teknologi yang digunakan untuk
+                  menciptakan koneksi yang lebih aman antara website dan browser.
                 </AccordionPanel>
               </AccordionItem>
             </Accordion>

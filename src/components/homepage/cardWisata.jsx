@@ -23,7 +23,7 @@ const CardWisata = ({ image, title = 'nama', id }) => {
     >
       <Image
         width={{ md: '196px', lg: '270px' }}
-        height="auto"
+        height="184px"
         src={image}
         alt="wisata-1"
         borderRadius={'10px'}
