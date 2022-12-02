@@ -43,7 +43,7 @@ const TourismSpot = () => {
               width={'100%'}
               height="364px"
             >
-              <Map className={styles.homeMap} center={DEFAULT_CENTER} zoom={12}>
+              <Map className={styles.homeMap} center={DEFAULT_CENTER} zoom={10}>
                 {({ TileLayer, Marker, Popup }) => (
                   <>
                     <TileLayer

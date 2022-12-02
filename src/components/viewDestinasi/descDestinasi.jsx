@@ -41,7 +41,7 @@ const DescDestinasi = () => {
         <Flex direction={{ base: 'column', lg: 'row' }} gap="34px">
           <Box textAlign={'justify'}>
             <Image
-              src="/view-destinasi.png"
+              src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/storage/images/${tourism?.image?.name}`}
               maxW={{ base: 'auto', md: '706px' }}
               height={{ base: 'auto', md: '357px' }}
               alt="View Destinasi Description"
@@ -53,31 +53,30 @@ const DescDestinasi = () => {
           <Box width={'100%'} height="164px">
             <Card maxW="sm" bgColor="transparent">
               <CardBody>
-                <Map
-                  className={styles.homeMap}
-                  center={[
-                    parseFloat(tourism?.location?.latitude || 0),
-                    parseFloat(tourism?.location?.longitude || 0),
-                  ]}
-                  zoom={12}
-                >
-                  {({ TileLayer, Marker, Popup }) => (
-                    <>
-                      <TileLayer
-                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                      />
-                      <Marker
-                        position={[
-                          parseFloat(tourism?.latitude || 0),
-                          parseFloat(tourism?.longitude || 0),
-                        ]}
-                      >
-                        <Popup>{tourism?.title}</Popup>
-                      </Marker>
-                    </>
-                  )}
-                </Map>
+                {tourism.location && (
+                  <Map
+                    className={styles.homeMap}
+                    center={[
+                      parseFloat(tourism.location.longitude),
+                      parseFloat(tourism.location.latitude),
+                    ]}
+                    zoom={12}
+                  >
+                    {({ TileLayer, Marker, Popup }) => (
+                      <>
+                        <TileLayer
+                          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                        />
+                        <Marker
+                          position={[parseFloat(tourism.latitude), parseFloat(tourism.longitude)]}
+                        >
+                          <Popup>{tourism.title}</Popup>
+                        </Marker>
+                      </>
+                    )}
+                  </Map>
+                )}
               </CardBody>
               <Divider />
               <CardFooter>
