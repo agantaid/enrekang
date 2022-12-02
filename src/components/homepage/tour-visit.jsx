@@ -13,7 +13,7 @@ const TourVisit = (props) => {
       <Box
         width={{ base: '300px', md: '100%' }}
         bgColor="#fff"
-        mt={{ base: '-60px', md: '0px' }}
+        mt={{ base: '10px', md: '0px' }}
         mx={{ base: 'auto', md: '0px' }}
         shadow={{ base: 'xl', md: 'none' }}
         borderRadius={{ base: '10px', md: '0px' }}

@@ -24,13 +24,13 @@ const HeroSliderDestinasi = ({ slides }) => {
         <Navbar pageTitle={'View Destination'} />
       </Box>
       <Carousel infiniteLoop>
-        {slides.map((slide) => {
+        {slides?.map((slide) => {
           return (
             <>
               <Box
                 width={'100%'}
                 height={{ base: '90vh', md: '100vh' }}
-                bgImage={slide.image}
+                bgImage={`${process.env.NEXT_PUBLIC_BACKEND_URL}/storage/images/${slide.image.name}`}
                 bgPosition="center"
                 bgRepeat={'no-repeat'}
                 bgSize="cover"
