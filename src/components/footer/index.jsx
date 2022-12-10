@@ -1,3 +1,4 @@
+import axios from '@/utils/axios';
 import {
   Accordion,
   AccordionButton,
@@ -16,12 +17,21 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import langHome from '../homepage/lang';
 
 const Footer = () => {
   // lang
   const { locale, locales, defaultLocale } = useRouter();
   const { footerDesc, footerContact } = langHome[locale];
+
+  const [settings, setSettings] = useState([]);
+
+  useEffect(() => {
+    axios.get('/api/v1/settings').then(({ data }) => setSettings(data));
+  }, []);
+
+  console.log(settings);
 
   return (
     <Box
@@ -50,11 +60,11 @@ const Footer = () => {
               color="#fff"
               fontWeight="400"
             >
-              {footerDesc}
+              {settings && settings[0]?.address}
             </Text>
             <HStack spacing="16px" mb="24px">
               {/* instagram */}
-              <Link href="https://instagram.com/dispoparenrekang?igshid=ZmVmZTY5ZGE=">
+              <Link href={settings && settings[0]?.instagram}>
                 <svg
                   width="24"
                   height="24"
@@ -68,7 +78,7 @@ const Footer = () => {
                   />
                 </svg>
               </Link>
-              <Link href="https://www.facebook.com/profile.php?id=100070318663005&mibextid=ZbWKwL">
+              <Link href={settings && settings[0]?.facebook}>
                 {/* facebook */}
                 <svg
                   width="24"
@@ -83,7 +93,7 @@ const Footer = () => {
                   />
                 </svg>
               </Link>
-              <Link href="https://youtube.com/@dispoparenrekang7377">
+              <Link href={settings && settings[0]?.youtube}>
                 {/* youtube */}
                 <svg
                   width="24"
@@ -139,7 +149,7 @@ const Footer = () => {
                       </svg>
                     </Stack>
                     <Text color="#FFFEFE" fontSize={'15px'} fontWeight="500">
-                      +62 811-4697-0000
+                      {settings && settings[0]?.contact}
                     </Text>
                   </HStack>
                 </Link>
@@ -160,7 +170,7 @@ const Footer = () => {
                       </svg>
                     </Stack>
                     <Text color="#FFFEFE" fontSize={'15px'} fontWeight="500">
-                      enrekangdispopar@gmail.com
+                      {settings && settings[0]?.email}
                     </Text>
                   </HStack>
                 </Link>
