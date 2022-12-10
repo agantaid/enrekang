@@ -1,17 +1,10 @@
 import { Box, Button, Card, CardBody, Flex, HStack, Image, Stack, Text } from '@chakra-ui/react';
 
-const CardEvent = ({ title, desc, date }) => {
+const CardEvent = ({ title, desc, date, src }) => {
   return (
     <Card maxW="md" shadow={'md'}>
       <CardBody>
-        {/* <Box px='25px' py='auto' borderRadius={'lg'} width='100%' height={'188px'} bgImage='/event1.png' bgPosition={'center'} bgSize='cover' bgRepeat={'no-repeat'}>
-                    <Box textAlign={'center'} width={'56px'} height='56px' borderRadius={'5px'} bgColor={'#fff'}>
-                        <Text fontSize={'18px'} fontWeight='600'>
-                            22 Nov
-                        </Text>
-                    </Box>
-                </Box> */}
-        <Image src="/event1.png" alt="Green double couch with wooden legs" borderRadius="lg" />
+        <Image src={src} alt="Green double couch with wooden legs" borderRadius="lg" />
         <Stack mt="6" spacing="3">
           <Text fontSize={'20px'} fontWeight="600">
             {title}
