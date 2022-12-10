@@ -1,10 +1,15 @@
+import axios from '@/utils/axios';
 import { Box, Container, Flex, HStack, Link, SimpleGrid, Stack, Text } from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
 import CardEvent from './cardEvent';
-// import FullCalendar from '@fullcalendar/react'
-// import interactionPlugin from '@fullcalendar/interaction'
-// import timeGridPlugin from '@fullcalendar/timegrid'
 
 const Event = () => {
+  const [events, setEvents] = useState();
+
+  useEffect(() => {
+    axios.get('/api/v1/events').then(({ data }) => setEvents(data.data));
+  }, []);
+
   return (
     <>
       <Container maxW="6xl" mt={'60px'} pb="100px">
@@ -55,72 +60,25 @@ const Event = () => {
                   </Text>
                 </HStack>
               </Flex>
-
               <Box mt="25px" ml="20px">
                 <Text fontSize={'20px'} fontWeight="600">
-                  Event minggu ini
+                  Event tersedia
                 </Text>
                 <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="30px">
-                  <CardEvent
-                    title={'Nature Festival'}
-                    desc="Nama  Destinasi Wisata"
-                    date="22 Nov 2022"
-                  />
-                  <CardEvent
-                    title={'Nature Festival'}
-                    desc="Nama  Destinasi Wisata"
-                    date="22 Nov 2022"
-                  />
-                  <CardEvent
-                    title={'Nature Festival'}
-                    desc="Nama  Destinasi Wisata"
-                    date="22 Nov 2022"
-                  />
-                  <CardEvent
-                    title={'Nature Festival'}
-                    desc="Nama  Destinasi Wisata"
-                    date="22 Nov 2022"
-                  />
-                  <CardEvent
-                    title={'Nature Festival'}
-                    desc="Nama  Destinasi Wisata"
-                    date="22 Nov 2022"
-                  />
-                </SimpleGrid>
-              </Box>
-              <Box mt="25px" ml="20px">
-                <Text fontSize={'20px'} fontWeight="600">
-                  Event yang akan datang
-                </Text>
-                <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="30px">
-                  <CardEvent
-                    title={'Nature Festival'}
-                    desc="Nama  Destinasi Wisata"
-                    date="22 Nov 2022"
-                  />
-                  <CardEvent
-                    title={'Nature Festival'}
-                    desc="Nama  Destinasi Wisata"
-                    date="22 Nov 2022"
-                  />
-                  <CardEvent
-                    title={'Nature Festival'}
-                    desc="Nama  Destinasi Wisata"
-                    date="22 Nov 2022"
-                  />
+                  {events &&
+                    events.map((event) => (
+                      <CardEvent
+                        src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/storage/images/${event.image.name}`}
+                        key={event.id}
+                        title={event.name}
+                        desc={event.description}
+                        date={event.date}
+                      />
+                    ))}
                 </SimpleGrid>
               </Box>
             </Box>
           </Box>
-          {/* <FullCalendar
-                        plugins={[interactionPlugin, timeGridPlugin]}
-                        initialView='timeGridWeek'
-                        nowIndicator={true}
-                        editable={true}
-                        initialEvents={[
-                        { title: 'nice event', start: new Date() }
-                        ]}
-                    /> */}
         </Flex>
       </Container>
     </>
