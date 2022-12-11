@@ -31,8 +31,6 @@ const Footer = () => {
     axios.get('/api/v1/settings').then(({ data }) => setSettings(data));
   }, []);
 
-  console.log(settings);
-
   return (
     <Box
       id="footer"
