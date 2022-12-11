@@ -1,6 +1,6 @@
 import { Box, Flex, HStack, Image, Stack, Text, VStack } from '@chakra-ui/react';
 
-const CardTestimoni = () => {
+const CardTestimoni = ({ name, comment, destination, job, image }) => {
   return (
     <Box>
       <Flex direction={{ base: 'column-reverse', md: 'row' }} gap={{ base: '8px', md: '35px' }}>
@@ -15,11 +15,11 @@ const CardTestimoni = () => {
         >
           <VStack alignItems={'flex-start'} spacing="4px" mb="17px">
             <Text fontSize={{ base: '12px', md: '18px', lg: '24px' }} fontWeight="600">
-              Nama Destinasi
+              {destination}
             </Text>
-            <Text fontSize={{ base: '8px', md: '16px' }} fontWeight="500">
+            {/* <Text fontSize={{ base: '8px', md: '16px' }} fontWeight="500">
               Nature Destination{' '}
-            </Text>
+            </Text> */}
           </VStack>
           <Text
             fontWeight={'400'}
@@ -27,8 +27,7 @@ const CardTestimoni = () => {
             lineHeight={{ base: '15px', md: '36px' }}
             mb="29px"
           >
-            very beautiful place, very natural and friendly people Lorem ipsum dolor sit amet
-            consectetur.
+            {comment}
           </Text>
           <Stack
             direction={{ base: 'row', md: 'row', lg: 'row' }}
@@ -39,19 +38,12 @@ const CardTestimoni = () => {
           >
             <VStack spacing="4px" mb="17px">
               <Text fontSize={{ base: '10px', md: '20px' }} fontWeight="600">
-                Jasmine
+                {name}
               </Text>
               <Text fontSize={{ base: '9px', md: '16px' }} fontWeight="400">
-                Traveller
+                {job}
               </Text>
             </VStack>
-            <Image
-              width={'35px'}
-              height="35px"
-              borderRadius={'50%'}
-              src="/testimonial-profile.png"
-              alt="profile-testimonial"
-            />
           </Stack>
         </Box>
 
@@ -60,7 +52,7 @@ const CardTestimoni = () => {
           width={{ base: '100%', md: '60%', lg: '648px' }}
           height={{ base: 'auto', md: '443px' }}
           shadow="xl"
-          src="/testimonial-view.png"
+          src={image}
           alt="testimonial-view"
         />
       </Flex>
