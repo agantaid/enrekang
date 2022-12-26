@@ -12,19 +12,26 @@ import Comment from './commen';
 import TestimonialSlider from '../homepage/testimonialSlider';
 import { useEffect, useState } from 'react';
 import axios from '@/utils/axios';
+import { useRouter } from 'next/router';
 
 const ViewDestinasi = () => {
+  const router = useRouter();
+  const { id } = router.query;
+  const [tourism, setTourism] = useState({});
   const [slides, setSlides] = useState([]);
+  const [video, setVideo] = useState([]);
 
   useEffect(() => {
+    axios.get(`/api/v1/tourisms/${id}`).then(({ data }) => setTourism(data));
+    axios.get('/api/v1/videos/public').then(({ data }) => setVideo(data.data[0]));
     axios.get('/api/v1/sliders').then(({ data }) => setSlides(data.data));
   }, []);
   return (
     <>
-      <HeroSliderDestinasi slides={slides} />
-      <DescDestinasi />
+      <HeroSliderDestinasi slides={slides} video={video} />
+      <DescDestinasi router={router} tourism={tourism} />
       <Facilities />
-      <TripIdeas />
+      <TripIdeas tourism={tourism} />
       <Box mt="80px">
         <InspirtaionTravel />
       </Box>
