@@ -4,7 +4,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Navbar from '../navbar';
 
 // If you want to use your own Selectors look up the Advancaed Story book examples
-const HeroSliderDestinasi = ({ slides }) => {
+const HeroSliderDestinasi = ({ slides, video }) => {
   // lang
   //   const { locale, locales, defaultLocale } = useRouter();
   //   const { heroButton } = langExplore[locale];
@@ -23,25 +23,36 @@ const HeroSliderDestinasi = ({ slides }) => {
       >
         <Navbar pageTitle={'View Destination'} />
       </Box>
-      <Carousel infiniteLoop>
-        {slides?.map((slide) => {
-          return (
-            <>
-              <Box
-                width={'100%'}
-                height={{ base: '90vh', md: '100vh' }}
-                bgImage={`${process.env.NEXT_PUBLIC_BACKEND_URL}/storage/images/${slide.image.name}`}
-                bgPosition="center"
-                bgRepeat={'no-repeat'}
-                bgSize="cover"
-                key="1"
-              >
-                {/* <Image position={'inherit'} src={slide.image} key='1' height="100vh" alt="hero-slider" width="800px" /> */}
-              </Box>
-            </>
-          );
-        })}
-      </Carousel>
+      <Box
+        as="video"
+        w="100vw"
+        autoPlay
+        loop
+        muted
+        display={{ base: 'none', lg: 'inherit' }}
+        src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/storage/videos/${video?.name}`}
+      />
+      <Box display={{ base: 'inherit', lg: 'none' }}>
+        <Carousel infiniteLoop>
+          {slides?.map((slide) => {
+            return (
+              <>
+                <Box
+                  width={'100%'}
+                  height={{ base: '90vh', md: '100vh' }}
+                  bgImage={`${process.env.NEXT_PUBLIC_BACKEND_URL}/storage/images/${slide.image.name}`}
+                  bgPosition="center"
+                  bgRepeat={'no-repeat'}
+                  bgSize="cover"
+                  key="1"
+                >
+                  {/* <Image position={'inherit'} src={slide.image} key='1' height="100vh" alt="hero-slider" width="800px" /> */}
+                </Box>
+              </>
+            );
+          })}
+        </Carousel>
+      </Box>
     </Box>
   );
 };

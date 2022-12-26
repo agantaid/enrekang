@@ -13,13 +13,16 @@ import TourVisit from './tour-visit';
 
 const HomePage = () => {
   const [slides, setSlides] = useState([]);
+  const [video, setVideo] = useState([]);
 
   useEffect(() => {
     axios.get('/api/v1/sliders').then(({ data }) => setSlides(data.data));
+    axios.get('/api/v1/videos/public').then(({ data }) => setVideo(data.data[0]));
   }, []);
+
   return (
     <>
-      <HeroSliderDestinasi slides={slides} />
+      <HeroSliderDestinasi slides={slides} video={video} />
       <TourVisit />
       <TempatWisata />
       <CariDestinasi />

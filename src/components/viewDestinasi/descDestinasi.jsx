@@ -1,34 +1,20 @@
-import axios from '@/utils/axios';
 import {
   Box,
   Button,
-  ButtonGroup,
   Card,
   CardBody,
   CardFooter,
   Container,
   Divider,
   Flex,
-  Heading,
   Image,
-  Stack,
   Text,
 } from '@chakra-ui/react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
 import Map from '../explore/Map';
 import styles from '../explore/Map/Map.module.css';
 
-const DescDestinasi = () => {
-  const router = useRouter();
-  const { id } = router.query;
-  const [tourism, setTourism] = useState({});
-
-  useEffect(() => {
-    axios.get(`/api/v1/tourisms/${id}`).then(({ data }) => setTourism(data));
-  }, [id]);
-
+const DescDestinasi = ({ router, tourism }) => {
   return (
     <Box pt="80px" pb="80px">
       <Container maxW="6xl">
