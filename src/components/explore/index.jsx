@@ -1,6 +1,7 @@
 import axios from '@/utils/axios';
 import { useEffect, useState } from 'react';
 import Footer from '../footer';
+import Navbar from '../navbar';
 import HeroSlider from './heroSlider';
 import InspirtaionTravel from './inspirationTravel';
 import RelatedWisata from './relatedWisata';
@@ -15,6 +16,7 @@ const Explore = () => {
 
   return (
     <>
+      <Navbar pageTitle={'Explore Maps'} />
       <HeroSlider slides={slides} />
       <TourismSpot />
       <RelatedWisata />

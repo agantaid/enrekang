@@ -54,7 +54,7 @@ const Download = () => {
           <Image
             mt="-204px"
             ml={{ lg: '520px', xl: '569px' }}
-            width="396px"
+            width="334px"
             height={'534px'}
             src="/icon-downloadapp.png"
             position="absolute"

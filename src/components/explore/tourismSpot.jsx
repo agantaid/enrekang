@@ -31,7 +31,7 @@ const TourismSpot = () => {
       <Box pt="102px" pb="52px">
         <Container maxW={'6xl'}>
           <Flex
-            direction={{ base: 'column', lg: 'row' }}
+            direction={{ base: 'column-reverse', lg: 'row' }}
             gap="36px"
             justifyContent={'space-between'}
           >

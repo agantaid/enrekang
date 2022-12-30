@@ -3,7 +3,7 @@ import CardFacilities from './cardFacilities';
 
 const Facilities = () => {
   return (
-    <Box mb="50px">
+    <Box mb="50px" mt={{ base: '252px', lg: '0px' }}>
       <Container maxW="6xl">
         <Flex direction={{ base: 'column', md: 'row' }} gap="32px">
           <Box maxW={'200px'} height={'222px'} mx={{ base: 'auto', md: '0px' }}>

@@ -3,6 +3,7 @@ import { Hide } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import Footer from '../footer';
 import Head from '../head';
+import Navbar from '../navbar';
 import HeroSliderDestinasi from '../viewDestinasi/heroSliderDestinasi';
 import CariDestinasi from './cariDestinasi';
 import Download from './download';
@@ -22,6 +23,7 @@ const HomePage = () => {
 
   return (
     <>
+      <Navbar pageTitle={'Home'} />
       <HeroSliderDestinasi slides={slides} video={video} />
       <TourVisit />
       <TempatWisata />

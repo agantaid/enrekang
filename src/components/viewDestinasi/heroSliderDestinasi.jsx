@@ -10,18 +10,18 @@ const HeroSliderDestinasi = ({ slides, video }) => {
   //   const { heroButton } = langExplore[locale];
 
   return (
-    <Box width={'100%'} height={{ base: '90vh', md: '100vh' }}>
+    <Box width={'100%'} height={{ base: '90vh', md: '100vh', lg: '483px', xl: '700px' }}>
       <Box
         pl={{ base: '24px', md: '40px', xl: '182px' }}
         pr={{ base: '24px', md: '40px', xl: '123px' }}
-        position="absolute"
+        // position="absolute"
         zIndex={'2'}
         right="0"
         top="0"
         left="0"
-        py={{ base: '40px', md: '67px' }}
+        // py={{ base: '40px', md: '67px' }}
       >
-        <Navbar pageTitle={'View Destination'} />
+        {/* <Navbar pageTitle={'View Destination'} /> */}
       </Box>
       <Box
         as="video"

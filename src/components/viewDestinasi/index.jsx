@@ -13,6 +13,7 @@ import TestimonialSlider from '../homepage/testimonialSlider';
 import { useEffect, useState } from 'react';
 import axios from '@/utils/axios';
 import { useRouter } from 'next/router';
+import Navbar from '../navbar';
 
 const ViewDestinasi = () => {
   const router = useRouter();
@@ -28,6 +29,7 @@ const ViewDestinasi = () => {
   }, []);
   return (
     <>
+      <Navbar pageTitle={'View Destinasi'} />
       <HeroSliderDestinasi slides={slides} video={video} />
       <DescDestinasi router={router} tourism={tourism} />
       <Facilities />

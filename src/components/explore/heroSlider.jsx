@@ -17,14 +17,14 @@ const HeroSlider = ({ slides }) => {
       <Box
         pl={{ base: '24px', md: '40px', xl: '182px' }}
         pr={{ base: '24px', md: '40px', xl: '123px' }}
-        position="absolute"
+        // position="absolute"
         zIndex={'2'}
         right="0"
         top="0"
         left="0"
-        py={{ base: '40px', md: '67px' }}
+        // py={{ base: '40px', md: '67px' }}
       >
-        <Navbar pageTitle={'Explore Maps'} />
+        {/* <Navbar pageTitle={'Explore Maps'} /> */}
       </Box>
       <Carousel infiniteLoop height="516px">
         {slides?.map((slide) => {
