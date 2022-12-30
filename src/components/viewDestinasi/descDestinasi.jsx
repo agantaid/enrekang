@@ -16,7 +16,7 @@ import styles from '../explore/Map/Map.module.css';
 
 const DescDestinasi = ({ router, tourism }) => {
   return (
-    <Box pt="80px" pb="80px">
+    <Box pt={{ base: '60px', lg: '120px', xl: '148px', '2xl': '600px' }} pb="80px">
       <Container maxW="6xl">
         <Text fontSize={'36px'} fontWeight="700">
           {router.locale === 'id' ? tourism?.title : tourism?.title_en}

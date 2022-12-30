@@ -27,6 +27,7 @@ const TourVisit = () => {
   return (
     <Container id="tours-visit" maxW="8xl">
       <Box
+        pt={{ base: '60px', lg: '120px', xl: '148px', '2xl': '600px' }}
         width={{ base: '300px', md: '100%' }}
         bgColor="#fff"
         mt={{ base: '10px', md: '0px' }}
@@ -42,7 +43,7 @@ const TourVisit = () => {
           pr={{ base: '10px', md: '20px', xl: '200px' }}
         >
           <Flex
-            direction={{ md: 'row', lg: 'row', xl: 'row' }}
+            direction={{ base: 'column', lg: 'row', xl: 'row' }}
             justifyContent={{ base: 'space-between', md: 'normal' }}
             gap={{ base: '0px', md: '20px', lg: '81px' }}
             textAlign={'left'}
