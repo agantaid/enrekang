@@ -10,7 +10,7 @@ const HeroSliderDestinasi = ({ slides, video }) => {
   //   const { heroButton } = langExplore[locale];
 
   return (
-    <Box width={'100%'} height={{ base: '90vh', md: '100vh', lg: '483px', xl: '700px' }}>
+    <Box width={'100%'} height={{ base: '30vh', md: '40vh', lg: '483px', xl: '700px' }}>
       <Box
         pl={{ base: '24px', md: '40px', xl: '182px' }}
         pr={{ base: '24px', md: '40px', xl: '123px' }}
@@ -29,30 +29,9 @@ const HeroSliderDestinasi = ({ slides, video }) => {
         autoPlay
         loop
         muted
-        display={{ base: 'none', lg: 'inherit' }}
+        // display={{ base: 'none', lg: 'inherit' }}
         src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/storage/videos/${video?.name}`}
       />
-      <Box display={{ base: 'inherit', lg: 'none' }}>
-        <Carousel infiniteLoop>
-          {slides?.map((slide) => {
-            return (
-              <>
-                <Box
-                  width={'100%'}
-                  height={{ base: '90vh', md: '100vh' }}
-                  bgImage={`${process.env.NEXT_PUBLIC_BACKEND_URL}/storage/images/${slide.image.name}`}
-                  bgPosition="center"
-                  bgRepeat={'no-repeat'}
-                  bgSize="cover"
-                  key="1"
-                >
-                  {/* <Image position={'inherit'} src={slide.image} key='1' height="100vh" alt="hero-slider" width="800px" /> */}
-                </Box>
-              </>
-            );
-          })}
-        </Carousel>
-      </Box>
     </Box>
   );
 };

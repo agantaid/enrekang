@@ -11,6 +11,7 @@ import Hero from './hero';
 import TempatWisata from './tempat-wisata';
 import TestimonialSlider from './testimonialSlider';
 import TourVisit from './tour-visit';
+import Youtube from './youtube';
 
 const HomePage = () => {
   const [slides, setSlides] = useState([]);
@@ -26,6 +27,7 @@ const HomePage = () => {
       <Navbar pageTitle={'Home'} />
       <HeroSliderDestinasi slides={slides} video={video} />
       <TourVisit />
+      <Youtube />
       <TempatWisata />
       <CariDestinasi />
       <TestimonialSlider />

@@ -23,7 +23,10 @@ const langHome = {
     toursDesc1: 'You will get beautiful nature tourism',
     toursDesc2: 'Diverse and unique cultural tourism',
     toursDesc3: 'You can see a beautiful tourist village',
-    toursDesc4: 'Diverse and unique cultural tourism',
+    toursDesc4: 'Diverse and unique artificial tourism',
+    // youtube
+    ytTitle: 'Choosing Enrekang as a tourist destination',
+    ytDesc: 'Take a break from the hustle and bustle of Enrekang with beautiful nature',
     // visit
     visitTitle: 'Visit Most Populer Destination',
     visitDesc: 'Browse popular destinations in Enrekang district',
@@ -69,6 +72,10 @@ const langHome = {
     toursDesc2: 'Wisata budaya yang beragam dan unik',
     toursDesc3: 'Anda dapat melihat desa wisata yang asri',
     toursDesc4: 'Wisata buatan yang beragam dan unik',
+    // youtube
+    ytTitle: 'Memilih Enrekang sebagai tempat detinasi wisata',
+    ytDesc:
+      'Beristrahat sejenak dari penaknya hiruk pikuk dengan sunguhan alam yang indah di Enrekang',
     // visit
     visitTitle: 'Kunjungi Destinasi Paling Populer',
     visitDesc: 'Telusuri destinasi populer yang ada di kabupaten enrekang',

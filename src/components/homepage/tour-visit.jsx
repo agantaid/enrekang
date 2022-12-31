@@ -27,7 +27,7 @@ const TourVisit = () => {
   return (
     <Container id="tours-visit" maxW="8xl">
       <Box
-        pt={{ base: '60px', lg: '120px', xl: '148px', '2xl': '600px' }}
+        pt={{ base: '60px', lg: '120px', xl: '148px', '2xl': '220px' }}
         width={{ base: '300px', md: '100%' }}
         bgColor="#fff"
         mt={{ base: '10px', md: '0px' }}
@@ -118,10 +118,10 @@ const TourVisit = () => {
               </Stack>
               <Stack direction="row" spacing={'23px'}>
                 <Image
-                  src="/icon-culture.png"
+                  src="/ico-hanmade.png"
                   width={{ base: '25px', md: '45px', lg: '62px' }}
                   height={{ base: '20px', md: '40px', lg: '54px' }}
-                  alt="Nature Tour"
+                  alt="Handmade Tour"
                 />
                 <VStack spacing="4px" alignItems={'flex-start'}>
                   <Text fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
