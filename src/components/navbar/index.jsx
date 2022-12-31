@@ -63,7 +63,7 @@ const Navbar = ({ pageTitle, lang }) => {
               <Image
                 width={'100%'}
                 height={{ base: 'auto', md: '65px' }}
-                src="/ico-wonderfulcolor.png"
+                src="/ico-dispoparcolor.png"
                 alt="Wonderful Indonesia"
               />
             </Stack>
