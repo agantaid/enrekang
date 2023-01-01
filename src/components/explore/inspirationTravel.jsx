@@ -28,6 +28,8 @@ const InspirtaionTravel = () => {
             <CardInspiration
               key={item.id}
               title={locale === 'id' ? item.title : item.title_en}
+              desc={locale === 'id' ? item.desc : item.desc_en}
+              link={`/view-destinasi/${item.id}`}
               image={`${process.env.NEXT_PUBLIC_BACKEND_URL}/storage/images/${item.images[0].name}`}
             />
           ))}

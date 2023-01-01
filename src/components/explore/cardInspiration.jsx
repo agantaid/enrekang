@@ -6,17 +6,15 @@ import {
   Modal,
   ModalOverlay,
   ModalContent,
-  ModalHeader,
   ModalCloseButton,
   ModalBody,
-  ModalFooter,
   Button,
   useDisclosure,
   Flex,
 } from '@chakra-ui/react';
 import { useState } from 'react';
 
-const CardInspiration = ({ title, image }) => {
+const CardInspiration = ({ title, image, desc, link }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isVisible, setIsVisible] = useState(false);
 
@@ -39,10 +37,8 @@ const CardInspiration = ({ title, image }) => {
       onMouseOver={over}
       onMouseOut={out}
     >
-      {/* <Image borderRadius={'15px'} _hover={{ transitionDelay:'0.5s' }} onMouseOver={over} onMouseOut={out}  width={'100%'} height='264px' src='/travel-inpirasi1.png' alt='inspiration' /> */}
       <Link
         onClick={onOpen}
-        // href="/viewDestinasi"
         style={{ textDecoration: 'none' }}
         display={isVisible ? 'block' : 'none'}
       >
@@ -51,17 +47,14 @@ const CardInspiration = ({ title, image }) => {
         </Text>
       </Link>
 
-      {/* <Button onClick={onOpen}>Open Modal</Button> */}
-
       <Modal isOpen={isOpen} size={'6xl'} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          {/* <ModalHeader></ModalHeader> */}
           <ModalCloseButton />
           <ModalBody py="40px">
             <Flex direction={{ base: 'column', lg: 'row' }} gap="52px">
               <Box>
-                <Image src="/inspiration-modal.png" width={'100%'} height={'auto'} alt={title} />
+                <Image src={image} width={'100%'} height={'auto'} alt={title} />
               </Box>
               <Flex direction={'column'} justifyContent="space-between" py="20px" width={'100%'}>
                 <Box>
@@ -76,20 +69,10 @@ const CardInspiration = ({ title, image }) => {
                     textAlign="justify"
                     lineHeight={'22px'}
                   >
-                    {' '}
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem, nobis? Iste
-                    voluptate sequi quasi suscipit molestiae perferendis est aperiam architecto
-                    reiciendis ex molestias aut earum quaerat, placeat sit! Non quos sunt veniam
-                    sint repudiandae soluta cum. Iusto quibusdam ullam labore repellendus illo minus
-                    cumque accusamus culpa! Voluptas animi exercitationem dolorum deserunt est,
-                    architecto rerum, ea aliquam doloribus sit reprehenderit pariatur quaerat iure
-                    odit, neque inventore! Porro tenetur ea quasi recusandae nam eaque quidem
-                    inventore debitis cum sunt iste harum ullam aliquid qui, rem quod dolorum,
-                    architecto explicabo a quos voluptate eveniet. Enim, illum soluta facere placeat
-                    deserunt quidem aliquam aperiam.{' '}
+                    {desc}
                   </Text>
                 </Box>
-                <Link href="#" style={{ textDecoration: 'none' }}>
+                <Link href={link} target="_blank" style={{ textDecoration: 'none' }}>
                   <Button
                     rightIcon={
                       <svg
@@ -120,7 +103,6 @@ const CardInspiration = ({ title, image }) => {
                         />
                       </svg>
                     }
-                    // size='md'
                     height="48px"
                     width="100%"
                     bgColor={'#8AD440'}
@@ -134,7 +116,6 @@ const CardInspiration = ({ title, image }) => {
                       bg: '#8AD440',
                       transform: 'scale(0.98)',
                     }}
-                    // mt={'auto'}
                   >
                     See Destination
                   </Button>
@@ -142,12 +123,6 @@ const CardInspiration = ({ title, image }) => {
               </Flex>
             </Flex>
           </ModalBody>
-
-          {/* <ModalFooter>
-            <Button colorScheme='blue' mr={3} onClick={onClose}>
-              Close
-            </Button>
-          </ModalFooter> */}
         </ModalContent>
       </Modal>
     </Box>
