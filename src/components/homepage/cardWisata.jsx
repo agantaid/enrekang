@@ -28,7 +28,7 @@ const CardWisata = ({ image, title = 'nama', id }) => {
         alt="wisata-1"
         borderRadius={'10px'}
       />
-      <Text fontSize={'16px'} fontWeight="500" my={{ base: '6px', md: '12px' }}>
+      <Text height={'80px'} fontSize={'16px'} fontWeight="500" my={{ base: '6px', md: '12px' }}>
         {title}
       </Text>
       <Button
