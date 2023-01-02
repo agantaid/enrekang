@@ -32,7 +32,7 @@ const ViewDestinasi = () => {
       <Navbar pageTitle={'View Destinasi'} />
       <HeroSliderDestinasi slides={slides} video={video} />
       <DescDestinasi router={router} tourism={tourism} />
-      <Facilities />
+      <Facilities facilities={tourism?.facilities} />
       <TripIdeas tourism={tourism} />
       <Box mt="80px">
         <InspirtaionTravel />

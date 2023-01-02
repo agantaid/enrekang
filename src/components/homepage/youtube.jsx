@@ -2,7 +2,7 @@ import langHome from '../homepage/lang';
 import { Box, Flex, Text, Container, AspectRatio } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 
-const Youtube = () => {
+const Youtube = ({ settings }) => {
   const { locale } = useRouter();
   const { ytTitle, ytDesc } = langHome[locale];
 
@@ -47,7 +47,7 @@ const Youtube = () => {
               <AspectRatio width={{ base: 'auto', lg: '639px' }} ratio={2} shadow="xl">
                 <iframe
                   title="Enrekang dan Sejuta Potensi Pariwisatanya."
-                  src="https://www.youtube.com/embed/jifDyOXmKEM"
+                  src={settings && settings[0]?.video}
                   allowFullScreen
                 />
               </AspectRatio>

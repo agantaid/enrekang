@@ -1,4 +1,3 @@
-import axios from '@/utils/axios';
 import {
   Accordion,
   AccordionButton,
@@ -16,21 +15,8 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react';
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
-import langHome from '../homepage/lang';
 
-const Footer = () => {
-  // lang
-  const { locale, locales, defaultLocale } = useRouter();
-  const { footerDesc, footerContact } = langHome[locale];
-
-  const [settings, setSettings] = useState([]);
-
-  useEffect(() => {
-    axios.get('/api/v1/settings').then(({ data }) => setSettings(data));
-  }, []);
-
+const Footer = ({ settings }) => {
   return (
     <Box
       id="footer"
