@@ -16,10 +16,12 @@ import Youtube from './youtube';
 const HomePage = () => {
   const [slides, setSlides] = useState([]);
   const [video, setVideo] = useState([]);
+  const [settings, setSettings] = useState([]);
 
   useEffect(() => {
     axios.get('/api/v1/sliders').then(({ data }) => setSlides(data.data));
     axios.get('/api/v1/videos/public').then(({ data }) => setVideo(data.data[0]));
+    axios.get('/api/v1/settings').then(({ data }) => setSettings(data));
   }, []);
 
   return (
@@ -27,14 +29,14 @@ const HomePage = () => {
       <Navbar pageTitle={'Home'} />
       <HeroSliderDestinasi slides={slides} video={video} />
       <TourVisit />
-      <Youtube />
+      <Youtube settings={settings} />
       <TempatWisata />
       <CariDestinasi />
       <TestimonialSlider />
       <Hide below="lg">
         <Download />
       </Hide>
-      <Footer />
+      <Footer settings={settings} />
     </>
   );
 };
