@@ -61,11 +61,17 @@ const Navbar = ({ pageTitle, lang }) => {
                 alt="logo-dispopar"
               />
               <Image
-                width={'100%'}
-                height={{ base: 'auto', md: '65px' }}
-                src="/ico-dispoparcolor.png"
+                width={'163.57px'}
+                height={{ base: 'auto', md: '71px' }}
+                src="/ico-dispoparcolor2.png"
                 alt="Wonderful Indonesia"
               />
+              {/* <Image
+                width={{base:'auto',md:'100%'}}
+                height={{ base: 'auto', md: '65px' }}
+                src="/ico-enrekang-journey.png"
+                alt="Enrekang Journey"
+              /> */}
             </Stack>
           </Link>
 
