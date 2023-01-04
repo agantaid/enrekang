@@ -1,5 +1,15 @@
 import axios from '@/utils/axios';
-import { Box, Flex, Stack, Text, VStack, Image, Container } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  Stack,
+  Text,
+  VStack,
+  Image,
+  Container,
+  SimpleGrid,
+  Center,
+} from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
@@ -13,10 +23,16 @@ const TourVisit = () => {
     toursTitle2,
     toursTitle3,
     toursTitle4,
+    toursTitle5,
+    toursTitle6,
+    toursTitle7,
     toursDesc1,
     toursDesc2,
     toursDesc3,
     toursDesc4,
+    toursDesc5,
+    toursDesc6,
+    toursDesc7,
   } = langHome[locale];
   const [tours, setTours] = useState([]);
 
@@ -27,7 +43,7 @@ const TourVisit = () => {
   return (
     <Container id="tours-visit" maxW="8xl">
       <Box
-        pt={{ base: '60px', lg: '120px', xl: '148px', '2xl': '220px' }}
+        pt={{ base: '40px', sm: '112px', md: '112px', lg: '120px', xl: '148px', '2xl': '220px' }}
         width={{ base: '300px', md: '100%' }}
         bgColor="#fff"
         mt={{ base: '10px', md: '0px' }}
@@ -36,31 +52,34 @@ const TourVisit = () => {
         borderRadius={{ base: '10px', md: '0px' }}
       >
         <Box
-          width={{ base: '70%', md: '100%' }}
+          width={{ base: '80%', md: '100%' }}
           height={'auto'}
-          pl={{ base: '10px', md: '20px', xl: '186px' }}
+          pl={{ base: '10px', md: '20px', xl: '40px' }}
           py={{ base: '12px', md: '120px', lg: '134px' }}
-          pr={{ base: '10px', md: '20px', xl: '200px' }}
+          pr={{ base: '10px', md: '20px', xl: '40px' }}
         >
           <Flex
-            direction={{ base: 'column', lg: 'row', xl: 'row' }}
+            direction={'column'}
             justifyContent={{ base: 'space-between', md: 'normal' }}
             gap={{ base: '0px', md: '20px', lg: '81px' }}
             textAlign={'left'}
           >
-            <Stack
-              direction="column"
-              spacing={{ base: '20px', md: '60px' }}
-              mt={{ base: '8px', md: '38px' }}
-            >
-              <Text fontWeight={'600'} fontSize={{ base: '14px', md: '26px' }}>
+            <Center mt="40px">
+              <Text fontWeight={'600'} fontSize={{ base: '16px', md: '28px', lg: '40px' }}>
                 {toursTitle}
               </Text>
-              <Stack direction="row" spacing={'23px'}>
+            </Center>
+            <SimpleGrid
+              columns={{ base: 1, lg: 2, xl: 3 }}
+              spacing={{ base: '20px', md: '60px' }}
+              mt={{ base: '8px', md: '38px' }}
+              mb={{ base: '20px', lg: '0px' }}
+            >
+              <Stack mx={'auto'} direction="row" spacing={'23px'}>
                 <Image
                   src="/icon-nature.png"
-                  width={{ base: '26px', md: '36px', lg: '62px' }}
-                  height={{ base: '22px', md: '32px', lg: '54px' }}
+                  width={{ base: '26px', md: '36px', lg: '57px' }}
+                  height={{ base: '22px', md: '32px', lg: '42.54px' }}
                   alt="Nature Tour"
                 />
                 <VStack spacing="4px" alignItems={'flex-start'}>
@@ -76,7 +95,7 @@ const TourVisit = () => {
                   </Text>
                 </VStack>
               </Stack>
-              <Stack direction="row" spacing={'23px'}>
+              <Stack mx={'auto'} direction="row" spacing={'23px'}>
                 <Image
                   src="/icon-culture.png"
                   width={{ base: '25px', md: '45px', lg: '62px' }}
@@ -96,7 +115,7 @@ const TourVisit = () => {
                   </Text>
                 </VStack>
               </Stack>
-              <Stack direction="row" spacing={'23px'}>
+              <Stack mx={'auto'} direction="row" spacing={'23px'}>
                 <Image
                   src="/icon-tourist.png"
                   width={{ base: '25px', md: '45px', lg: '62px' }}
@@ -116,7 +135,7 @@ const TourVisit = () => {
                   </Text>
                 </VStack>
               </Stack>
-              <Stack direction="row" spacing={'23px'}>
+              <Stack mx={'auto'} direction="row" spacing={'23px'}>
                 <Image
                   src="/ico-hanmade.png"
                   width={{ base: '25px', md: '45px', lg: '62px' }}
@@ -136,9 +155,69 @@ const TourVisit = () => {
                   </Text>
                 </VStack>
               </Stack>
-            </Stack>
+              <Stack mx={'auto'} direction="row" spacing={'23px'}>
+                <Image
+                  src="/ico-culinary.png"
+                  width={{ base: '25px', md: '45px', lg: '62px' }}
+                  height={{ base: '20px', md: '40px', lg: '54px' }}
+                  alt="Culinary Tour"
+                />
+                <VStack spacing="4px" alignItems={'flex-start'}>
+                  <Text fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
+                    {toursTitle5}
+                  </Text>
+                  <Text
+                    width={{ base: 'auto', lg: '372px' }}
+                    fontSize={{ base: '10px', md: '20px' }}
+                    fontWeight="400"
+                  >
+                    {toursDesc5}
+                  </Text>
+                </VStack>
+              </Stack>
+              <Stack mx={'auto'} direction="row" spacing={'23px'}>
+                <Image
+                  src="/ico-interest.png"
+                  width={{ base: '25px', md: '45px', lg: '62px' }}
+                  height={{ base: '20px', md: '40px', lg: '54px' }}
+                  alt="Special Interest"
+                />
+                <VStack spacing="4px" alignItems={'flex-start'}>
+                  <Text fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
+                    {toursTitle6}
+                  </Text>
+                  <Text
+                    width={{ base: 'auto', lg: '372px' }}
+                    fontSize={{ base: '10px', md: '20px' }}
+                    fontWeight="400"
+                  >
+                    {toursDesc6}
+                  </Text>
+                </VStack>
+              </Stack>
+              <Stack mx={'auto'} direction="row" spacing={'23px'}>
+                <Image
+                  src="/ico-interest.png"
+                  width={{ base: '25px', md: '45px', lg: '62px' }}
+                  height={{ base: '20px', md: '40px', lg: '54px' }}
+                  alt="History Tourism"
+                />
+                <VStack spacing="4px" alignItems={'flex-start'}>
+                  <Text fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
+                    {toursTitle7}
+                  </Text>
+                  <Text
+                    width={{ base: 'auto', lg: '372px' }}
+                    fontSize={{ base: '10px', md: '20px' }}
+                    fontWeight="400"
+                  >
+                    {toursDesc7}
+                  </Text>
+                </VStack>
+              </Stack>
+            </SimpleGrid>
 
-            <Box
+            {/* <Box
               width={{ md: 'auto', lg: 'auto' }}
               mt={{ base: '70px', md: '100px', lg: 'auto' }}
               mb={{ lg: 'auto' }}
@@ -158,7 +237,7 @@ const TourVisit = () => {
                   );
                 })}
               </Carousel>
-            </Box>
+            </Box> */}
           </Flex>
         </Box>
       </Box>
