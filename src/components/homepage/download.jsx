@@ -11,6 +11,7 @@ const Download = () => {
     <Container maxW={'8xl'} px={{ lg: '0px', xl: '183px' }}>
       <Box
         mt="205px"
+        mb={{ base: '35px', lg: '205px' }}
         pl="106px"
         pt="83px"
         pb="43px"

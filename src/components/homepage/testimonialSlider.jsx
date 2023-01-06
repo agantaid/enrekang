@@ -31,7 +31,7 @@ const TestimonialSlider = () => {
   return (
     <Container maxW={'8xl'}>
       <Box
-        mt="65px"
+        mt={{ base: '35px', lg: '65px' }}
         mb={{ base: '-85px', md: '-85px', lg: '0px' }}
         bgColor={'#F5F5F5'}
         py="65px"

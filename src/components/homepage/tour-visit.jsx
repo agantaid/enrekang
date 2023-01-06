@@ -9,6 +9,7 @@ import {
   Container,
   SimpleGrid,
   Center,
+  Hide,
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -43,7 +44,7 @@ const TourVisit = () => {
   return (
     <Container id="tours-visit" maxW="8xl">
       <Box
-        pt={{ base: '40px', sm: '112px', md: '112px', lg: '120px', xl: '148px', '2xl': '220px' }}
+        pt={{ base: '40px', sm: '176px', md: '60px', lg: '120px', xl: '120px', '2xl': '347px' }}
         width={{ base: '300px', md: '100%' }}
         bgColor="#fff"
         mt={{ base: '10px', md: '0px' }}
@@ -55,7 +56,7 @@ const TourVisit = () => {
           width={{ base: '80%', md: '100%' }}
           height={'auto'}
           pl={{ base: '10px', md: '20px', xl: '40px' }}
-          py={{ base: '12px', md: '120px', lg: '134px' }}
+          py={{ base: '12px', md: '120px', lg: '120px' }}
           pr={{ base: '10px', md: '20px', xl: '40px' }}
         >
           <Flex
@@ -64,18 +65,18 @@ const TourVisit = () => {
             gap={{ base: '0px', md: '20px', lg: '81px' }}
             textAlign={'left'}
           >
-            <Center mt="40px">
+            <Center mb="40px">
               <Text fontWeight={'600'} fontSize={{ base: '16px', md: '28px', lg: '40px' }}>
                 {toursTitle}
               </Text>
             </Center>
             <SimpleGrid
-              columns={{ base: 1, lg: 2, xl: 3 }}
+              columns={{ base: 1, md: 2, lg: 2, xl: 3 }}
               spacing={{ base: '20px', md: '60px' }}
               mt={{ base: '8px', md: '38px' }}
               mb={{ base: '20px', lg: '0px' }}
             >
-              <Stack mx={'auto'} direction="row" spacing={'23px'}>
+              <Stack ml={{ base: '40px', md: '0px', lg: '0px' }} direction="row" spacing={'23px'}>
                 <Image
                   src="/icon-nature.png"
                   width={{ base: '26px', md: '36px', lg: '57px' }}
@@ -95,7 +96,7 @@ const TourVisit = () => {
                   </Text>
                 </VStack>
               </Stack>
-              <Stack mx={'auto'} direction="row" spacing={'23px'}>
+              <Stack ml={{ base: '40px', md: '0px', lg: '0px' }} direction="row" spacing={'23px'}>
                 <Image
                   src="/icon-culture.png"
                   width={{ base: '25px', md: '45px', lg: '62px' }}
@@ -115,7 +116,7 @@ const TourVisit = () => {
                   </Text>
                 </VStack>
               </Stack>
-              <Stack mx={'auto'} direction="row" spacing={'23px'}>
+              <Stack ml={{ base: '40px', md: '0px', lg: '0px' }} direction="row" spacing={'23px'}>
                 <Image
                   src="/icon-tourist.png"
                   width={{ base: '25px', md: '45px', lg: '62px' }}
@@ -135,7 +136,7 @@ const TourVisit = () => {
                   </Text>
                 </VStack>
               </Stack>
-              <Stack mx={'auto'} direction="row" spacing={'23px'}>
+              <Stack ml={{ base: '40px', md: '0px', lg: '0px' }} direction="row" spacing={'23px'}>
                 <Image
                   src="/ico-hanmade.png"
                   width={{ base: '25px', md: '45px', lg: '62px' }}
@@ -155,7 +156,7 @@ const TourVisit = () => {
                   </Text>
                 </VStack>
               </Stack>
-              <Stack mx={'auto'} direction="row" spacing={'23px'}>
+              <Stack ml={{ base: '40px', md: '0px', lg: '0px' }} direction="row" spacing={'23px'}>
                 <Image
                   src="/ico-culinary.png"
                   width={{ base: '25px', md: '45px', lg: '62px' }}
@@ -175,7 +176,7 @@ const TourVisit = () => {
                   </Text>
                 </VStack>
               </Stack>
-              <Stack mx={'auto'} direction="row" spacing={'23px'}>
+              <Stack ml={{ base: '40px', md: '0px', lg: '0px' }} direction="row" spacing={'23px'}>
                 <Image
                   src="/ico-interest.png"
                   width={{ base: '25px', md: '45px', lg: '62px' }}
@@ -195,7 +196,10 @@ const TourVisit = () => {
                   </Text>
                 </VStack>
               </Stack>
-              <Stack mx={'auto'} direction="row" spacing={'23px'}>
+              <Hide below="xl">
+                <Box></Box>
+              </Hide>
+              <Stack ml={{ base: '40px', md: '0px', lg: '0px' }} direction="row" spacing={'23px'}>
                 <Image
                   src="/ico-interest.png"
                   width={{ base: '25px', md: '45px', lg: '62px' }}

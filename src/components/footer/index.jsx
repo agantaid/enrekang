@@ -37,7 +37,12 @@ const Footer = ({ settings }) => {
           <Box width={{ base: 'auto', md: '385px', lg: '385px' }}>
             <Stack direction={'column'} spacing="28px">
               <Stack direction={'row'} spacing={{ base: '20px', md: '56px' }}>
-                <Image w="91.11px" h="75px" src="/logo-dispopar.png" alt="Logo Dispopar" />
+                <Image
+                  width={{ base: '60px', lg: '80px' }}
+                  h="75px"
+                  src="/logo-dispopar.png"
+                  alt="Logo Dispopar"
+                />
                 <Image
                   w="156.44px"
                   h="65px"
@@ -220,6 +225,8 @@ const Footer = ({ settings }) => {
             </Accordion>
           </Box>
         </Flex>
+
+        {/* copyright */}
         <Center mt="60px">
           <HStack spacing={'10px'}>
             <Stack>
@@ -237,7 +244,7 @@ const Footer = ({ settings }) => {
               </svg>
             </Stack>
             <Text fontSize={'15px'} fontWeight="500" color="#FFFEFE">
-              Dispopar Enrekang Copyright 2022
+              Dispopar Enrekang Copyright 2023
             </Text>
           </HStack>
         </Center>

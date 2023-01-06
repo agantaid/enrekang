@@ -29,7 +29,7 @@ const langHome = {
     toursDesc4: 'Unique manmade tourism',
     toursDesc5: 'Various culinary specialties',
     toursDesc6: 'Beautiful custom tours',
-    toursDesc7: 'Beautiful custom tours',
+    toursDesc7: 'Sacred Historical Tourism',
     // youtube
     ytTitle: 'Choosing Enrekang as a tourist destination',
     ytDesc: 'Take a break from the hustle and bustle of Enrekang with beautiful nature',
@@ -76,14 +76,14 @@ const langHome = {
     toursTitle4: 'Wisata Buatan',
     toursTitle5: 'Wisata kuliner',
     toursTitle6: 'Wisata Minat Khusus',
-    toursTitle6: 'Wisata Sejarah',
+    toursTitle7: 'Wisata Sejarah',
     toursDesc1: 'Wisata alam yang indah',
     toursDesc2: 'Wisata budaya yang beragam',
     toursDesc3: 'Melihat desa wisata yang asri',
     toursDesc4: 'Wisata buatan yang unik',
     toursDesc5: 'Berbagai kuliner khas',
     toursDesc6: 'Wisata khusus yang indah',
-    toursDesc6: 'Wisata Sejarah',
+    toursDesc7: 'Wisata Sejarah yang sakral',
     // youtube
     ytTitle: 'Memilih Enrekang sebagai tempat detinasi wisata',
     ytDesc:
