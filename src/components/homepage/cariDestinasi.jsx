@@ -10,7 +10,7 @@ const CariDestinasi = () => {
 
   return (
     <Container id="visit-populer" maxW="8xl">
-      <Box px={{ md: '20px', xl: '182px' }}>
+      <Box px={{ md: '20px', xl: '182px' }} my={{ base: '35px', md: '60px', lg: '120px' }}>
         <Flex
           gap={{ md: '40px', xl: '88px' }}
           direction={{ base: 'column', md: 'row', lg: 'row' }}

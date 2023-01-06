@@ -7,18 +7,20 @@ const Youtube = ({ settings }) => {
   const { ytTitle, ytDesc } = langHome[locale];
 
   return (
-    <Container maxW="8xl" my="120px">
-      <Box
-        width={'100%'}
-        height={{ md: '682px', xl: '472px' }}
-        py="63px"
-        px={{ base: '20px', md: '40px', lg: '120px' }}
-        bgImage="/bg-youtube.png"
-        bgSize="cover"
-        bgRepeat={'no-repeat'}
-        bgPosition="center"
-      >
-        <Box my="auto">
+    <Box
+      mb={{ base: '35px', lg: '120px' }}
+      mt={{ base: '35px' }}
+      width={'100%'}
+      height={{ base: '500px', sm: 'auto', md: '682px', xl: '472px' }}
+      py="63px"
+      px={{ base: '20px', md: '40px', lg: '120px' }}
+      bgImage="/bg-youtube.png"
+      bgSize="cover"
+      bgRepeat={'no-repeat'}
+      bgPosition="center"
+    >
+      <Container maxW="8xl">
+        <Box>
           <Flex
             direction={{ base: 'column', md: 'column', xl: 'row' }}
             gap="36px"
@@ -43,6 +45,8 @@ const Youtube = ({ settings }) => {
                 {ytDesc}
               </Text>
             </Box>
+
+            {/* youtube */}
             <Box>
               <AspectRatio width={{ base: 'auto', lg: '639px' }} ratio={2} shadow="xl">
                 <iframe
@@ -54,8 +58,8 @@ const Youtube = ({ settings }) => {
             </Box>
           </Flex>
         </Box>
-      </Box>
-    </Container>
+      </Container>
+    </Box>
   );
 };
 
