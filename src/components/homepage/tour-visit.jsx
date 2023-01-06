@@ -11,6 +11,7 @@ import {
   Center,
   Hide,
 } from '@chakra-ui/react';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
@@ -84,9 +85,12 @@ const TourVisit = () => {
                   alt="Nature Tour"
                 />
                 <VStack spacing="4px" alignItems={'flex-start'}>
-                  <Text fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
-                    {toursTitle1}
-                  </Text>
+                  <Link href="/natureTourism" style={{ textDecoration: 'none' }}>
+                    <Text fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
+                      {toursTitle1}
+                    </Text>
+                  </Link>
+
                   <Text
                     width={{ base: 'auto', lg: '372px' }}
                     fontSize={{ base: '10px', md: '20px' }}
