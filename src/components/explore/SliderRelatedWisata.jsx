@@ -8,7 +8,7 @@ import '../../../node_modules/slick-carousel/slick/slick-theme.css';
 import { useRouter } from 'next/router';
 import axios from '@/utils/axios';
 
-export default function SliderRelatedWisata() {
+export default function SliderRelatedWisata({ location }) {
   const [data, setData] = useState([]);
   const { locale } = useRouter();
   const settings = {
@@ -47,8 +47,10 @@ export default function SliderRelatedWisata() {
   };
 
   useEffect(() => {
-    axios.get('/api/v1/tourisms').then(({ data }) => setData(data.data));
-  }, []);
+    if (location)
+      axios.get(`/api/v1/tourisms?location-id=${location}`).then(({ data }) => setData(data.data));
+    else axios.get('/api/v1/tourisms').then(({ data }) => setData(data.data));
+  }, [location]);
 
   return (
     <>

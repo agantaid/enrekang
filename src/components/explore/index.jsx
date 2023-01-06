@@ -9,19 +9,22 @@ import TourismSpot from './tourismSpot';
 
 const Explore = () => {
   const [slides, setSlides] = useState([]);
+  const [settings, setSettings] = useState([]);
+  const [location, setLocation] = useState('');
 
   useEffect(() => {
     axios.get('/api/v1/sliders').then(({ data }) => setSlides(data.data));
+    axios.get('/api/v1/settings').then(({ data }) => setSettings(data));
   }, []);
 
   return (
     <>
       <Navbar pageTitle={'Explore Maps'} />
       <HeroSlider slides={slides} />
-      <TourismSpot />
-      <RelatedWisata />
+      <TourismSpot setLocation={setLocation} />
+      <RelatedWisata location={location} />
       <InspirtaionTravel />
-      <Footer />
+      <Footer settings={settings} />
     </>
   );
 };

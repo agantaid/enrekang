@@ -1,4 +1,5 @@
-import { Box, Checkbox, Container, Flex, SimpleGrid, Text } from '@chakra-ui/react';
+import { Box, Container, Flex, SimpleGrid, Text } from '@chakra-ui/react';
+import CardFacilities from './cardFacilities';
 
 const Facilities = ({ facilities }) => {
   return (
@@ -19,9 +20,11 @@ const Facilities = ({ facilities }) => {
             mx={{ base: 'auto', md: '0px' }}
           >
             {facilities?.map((facility) => (
-              <Checkbox key={facility.id} colorScheme="green" defaultChecked>
-                {facility.name}
-              </Checkbox>
+              <CardFacilities
+                key={facility.id}
+                title={facility.name}
+                image={`${process.env.NEXT_PUBLIC_BACKEND_URL}/storage/images/${facility.image.name}`}
+              />
             ))}
           </SimpleGrid>
         </Flex>

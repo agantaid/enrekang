@@ -3,23 +3,8 @@ import Map from './Map';
 import styles from '../explore/Map/Map.module.css';
 import { useEffect, useState } from 'react';
 import axios from '@/utils/axios';
-// import dynamic from 'next/dynamic'
 
-// const MapContainer = dynamic(()=>import('react-leaflet/MapContainer'),{
-//     ssr:false,
-// })
-
-// const Marker = dynamic(()=>import('react-leaflet/Marker'),{
-//     ssr:false,
-// })
-// const Popup = dynamic(()=>import('react-leaflet/Popup'),{
-//     ssr:false,
-// })
-// const TileLayer = dynamic(()=>import('react-leaflet/TileLayer'),{
-//     ssr:false,
-// })
-
-const TourismSpot = () => {
+const TourismSpot = ({ setLocation }) => {
   const [locations, setLocations] = useState([]);
   const DEFAULT_CENTER = [-3.5631279, 119.7612];
 
@@ -35,14 +20,7 @@ const TourismSpot = () => {
             gap="36px"
             justifyContent={'space-between'}
           >
-            <Box
-              // bgImage={'map-spot.png'}
-              // bgRepeat="no-repeat"
-              // bgPosition={'center'}
-              // bgSize="cover"
-              width={'100%'}
-              height="364px"
-            >
+            <Box width={'100%'} height="364px">
               <Map className={styles.homeMap} center={DEFAULT_CENTER} zoom={10}>
                 {({ TileLayer, Marker, Popup }) => (
                   <>
@@ -69,7 +47,12 @@ const TourismSpot = () => {
               <Text my="8px" fontSize={'20px'} fontWeight="400">
                 Telusuri spot menarik di kabupaten Enrekang sekarang
               </Text>
-              <Select placeholder="Silahkan Pilih" size="lg" shadow={'xl'}>
+              <Select
+                onChange={(e) => setLocation(e.target.value)}
+                placeholder="Silahkan Pilih"
+                size="lg"
+                shadow={'xl'}
+              >
                 {locations?.map((location) => (
                   <option key={location.id} value={location.id}>
                     {location.name}

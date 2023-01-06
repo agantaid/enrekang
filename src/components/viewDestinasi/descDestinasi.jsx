@@ -10,7 +10,6 @@ import {
   Image,
   Text,
 } from '@chakra-ui/react';
-import Link from 'next/link';
 import Map from '../explore/Map';
 import styles from '../explore/Map/Map.module.css';
 
@@ -67,45 +66,47 @@ const DescDestinasi = ({ router, tourism }) => {
               <Divider />
               <CardFooter>
                 <Flex maxW="100%" justifyContent={'space-around'}>
-                  <Link href={'/viewDestinasi'} style={{ textDecoration: 'none' }}>
-                    <Button
-                      rightIcon={
-                        <svg
-                          width="38"
-                          height="38"
-                          viewBox="0 0 38 38"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M27.3126 10.6875L19.7917 18.2083"
-                            stroke="black"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                          <path
-                            d="M21.7708 10.6875H27.3124V16.2292"
-                            stroke="black"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                          <path
-                            d="M22.9583 22.9582V27.3123L10.6875 27.3123L10.6875 15.0415H15.0417"
-                            stroke="black"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      }
-                      variant="ghost"
-                      colorScheme="blue"
-                    >
-                      Navigation
-                    </Button>
-                  </Link>
+                  <Button
+                    as="a"
+                    href={`https://www.google.com/maps/search/?api=1&query=${parseFloat(
+                      tourism.latitude
+                    )}%2C${parseFloat(tourism.longitude)}`}
+                    rightIcon={
+                      <svg
+                        width="38"
+                        height="38"
+                        viewBox="0 0 38 38"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M27.3126 10.6875L19.7917 18.2083"
+                          stroke="black"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M21.7708 10.6875H27.3124V16.2292"
+                          stroke="black"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M22.9583 22.9582V27.3123L10.6875 27.3123L10.6875 15.0415H15.0417"
+                          stroke="black"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    }
+                    variant="ghost"
+                    colorScheme="blue"
+                  >
+                    Navigation
+                  </Button>
                 </Flex>
               </CardFooter>
             </Card>
