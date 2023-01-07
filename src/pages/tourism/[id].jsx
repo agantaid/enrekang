@@ -1,12 +1,18 @@
 import CardWisata from '@/components/homepage/cardWisata';
 import axios from '@/utils/axios';
 import { Box, Container, Flex, HStack, Link, SimpleGrid, Stack, Text } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-const NatureTourism = () => {
+const Tourism = () => {
+  const router = useRouter();
+  const { id, locale } = router.query;
+  const [tourism, setTourism] = useState([]);
+
   useEffect(() => {
-    axios.get('/api/v1/events').then(({ data }) => setEvents(data.data));
-  }, []);
+    if (!id) return;
+    axios.get(`/api/v1/tourisms?trips=${id}`).then(({ data }) => setTourism(data));
+  }, [id]);
 
   return (
     <>
@@ -39,34 +45,21 @@ const NatureTourism = () => {
             <Box mt="50px">
               <Flex justifyContent={'space-between'}>
                 <HStack spacing="18px">
-                  {/* <Stack>
-                    <svg
-                      width="27"
-                      height="30"
-                      viewBox="0 0 27 30"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M3.58317 29.4997C2.78109 29.4997 2.09421 29.2143 1.52255 28.6436C0.951851 28.072 0.666504 27.3851 0.666504 26.583V6.16634C0.666504 5.36426 0.951851 4.67787 1.52255 4.10717C2.09421 3.53551 2.78109 3.24967 3.58317 3.24967H5.0415V0.333008H7.95817V3.24967H19.6248V0.333008H22.5415V3.24967H23.9998C24.8019 3.24967 25.4888 3.53551 26.0605 4.10717C26.6312 4.67787 26.9165 5.36426 26.9165 6.16634V26.583C26.9165 27.3851 26.6312 28.072 26.0605 28.6436C25.4888 29.2143 24.8019 29.4997 23.9998 29.4997H3.58317ZM3.58317 26.583H23.9998V11.9997H3.58317V26.583ZM3.58317 9.08301H23.9998V6.16634H3.58317V9.08301ZM3.58317 9.08301V6.16634V9.08301ZM6.49984 17.833V14.9163H21.0832V17.833H6.49984ZM6.49984 23.6663V20.7497H16.7082V23.6663H6.49984Z"
-                        fill="#222222"
-                      />
-                    </svg>
-                  </Stack> */}
                   <Text fontSize={'32px'} fontWeight="600">
-                    Nature Tourism
+                    {id?.charAt(0).toUpperCase() + id?.slice(1)} Tourism
                   </Text>
                 </HStack>
               </Flex>
               <Box mt="25px" ml="20px">
-                {/* <Text fontSize={'20px'} fontWeight="600">
-                  Event tersedia
-                </Text> */}
                 <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="30px">
-                  <CardWisata />
-                  <CardWisata />
-                  <CardWisata />
-                  <CardWisata />
+                  {tourism?.map((item) => (
+                    <CardWisata
+                      key={item.id}
+                      id={item.id}
+                      image={`${process.env.NEXT_PUBLIC_BACKEND_URL}/storage/images/${item.image.name}`}
+                      title={locale === 'id' ? item.title : item.title_en}
+                    />
+                  ))}
                 </SimpleGrid>
               </Box>
             </Box>
@@ -77,4 +70,4 @@ const NatureTourism = () => {
   );
 };
 
-export default NatureTourism;
+export default Tourism;

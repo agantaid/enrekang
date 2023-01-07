@@ -46,7 +46,7 @@ export default function SliderCard() {
   };
 
   useEffect(() => {
-    axios.get('/api/v1/tourisms').then(({ data }) => setData(data.data));
+    axios.get('/api/v1/tourisms').then(({ data }) => setData(data.data.slice(0, 5)));
   }, []);
 
   return (
