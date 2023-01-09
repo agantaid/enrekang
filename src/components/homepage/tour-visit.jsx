@@ -1,4 +1,3 @@
-import axios from '@/utils/axios';
 import {
   Box,
   Flex,
@@ -13,8 +12,6 @@ import {
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
-import { Carousel } from 'react-responsive-carousel';
 import langHome from '../homepage/lang';
 
 const TourVisit = () => {
@@ -36,11 +33,6 @@ const TourVisit = () => {
     toursDesc6,
     toursDesc7,
   } = langHome[locale];
-  const [tours, setTours] = useState([]);
-
-  useEffect(() => {
-    axios.get('/api/v1/tourisms?trips=true').then(({ data }) => setTours(data.data));
-  }, []);
 
   return (
     <Container id="tours-visit" maxW="8xl">
@@ -85,12 +77,11 @@ const TourVisit = () => {
                   alt="Nature Tour"
                 />
                 <VStack spacing="4px" alignItems={'flex-start'}>
-                  <Link href="/natureTourism" style={{ textDecoration: 'none' }}>
-                    <Text fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
+                  <Link href={`/tourism/nature`} style={{ textDecoration: 'none' }}>
+                    <Text cursor="pointer" fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
                       {toursTitle1}
                     </Text>
                   </Link>
-
                   <Text
                     width={{ base: 'auto', lg: '372px' }}
                     fontSize={{ base: '10px', md: '20px' }}
@@ -108,9 +99,11 @@ const TourVisit = () => {
                   alt="Nature Tour"
                 />
                 <VStack spacing="4px" alignItems={'flex-start'}>
-                  <Text fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
-                    {toursTitle2}
-                  </Text>
+                  <Link href={`/tourism/culture`} style={{ textDecoration: 'none' }}>
+                    <Text cursor="pointer" fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
+                      {toursTitle2}
+                    </Text>
+                  </Link>
                   <Text
                     width={{ base: 'auto', lg: '372px' }}
                     fontSize={{ base: '10px', md: '20px' }}
@@ -128,9 +121,11 @@ const TourVisit = () => {
                   alt="Nature Tour"
                 />
                 <VStack spacing="4px" alignItems={'flex-start'}>
-                  <Text fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
-                    {toursTitle3}
-                  </Text>
+                  <Link href={`/tourism/tourist`} style={{ textDecoration: 'none' }}>
+                    <Text cursor="pointer" fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
+                      {toursTitle3}
+                    </Text>
+                  </Link>
                   <Text
                     width={{ base: 'auto', lg: '372px' }}
                     fontSize={{ base: '10px', md: '20px' }}
@@ -148,9 +143,11 @@ const TourVisit = () => {
                   alt="Handmade Tour"
                 />
                 <VStack spacing="4px" alignItems={'flex-start'}>
-                  <Text fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
-                    {toursTitle4}
-                  </Text>
+                  <Link href={`/tourism/manmade`} style={{ textDecoration: 'none' }}>
+                    <Text cursor="pointer" fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
+                      {toursTitle4}
+                    </Text>
+                  </Link>
                   <Text
                     width={{ base: 'auto', lg: '372px' }}
                     fontSize={{ base: '10px', md: '20px' }}
@@ -168,9 +165,11 @@ const TourVisit = () => {
                   alt="Culinary Tour"
                 />
                 <VStack spacing="4px" alignItems={'flex-start'}>
-                  <Text fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
-                    {toursTitle5}
-                  </Text>
+                  <Link href={`/tourism/culinary`} style={{ textDecoration: 'none' }}>
+                    <Text cursor="pointer" fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
+                      {toursTitle5}
+                    </Text>
+                  </Link>
                   <Text
                     width={{ base: 'auto', lg: '372px' }}
                     fontSize={{ base: '10px', md: '20px' }}
@@ -188,9 +187,11 @@ const TourVisit = () => {
                   alt="Special Interest"
                 />
                 <VStack spacing="4px" alignItems={'flex-start'}>
-                  <Text fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
-                    {toursTitle6}
-                  </Text>
+                  <Link href={`/tourism/special`} style={{ textDecoration: 'none' }}>
+                    <Text cursor="pointer" fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
+                      {toursTitle6}
+                    </Text>
+                  </Link>
                   <Text
                     width={{ base: 'auto', lg: '372px' }}
                     fontSize={{ base: '10px', md: '20px' }}
@@ -211,9 +212,11 @@ const TourVisit = () => {
                   alt="History Tourism"
                 />
                 <VStack spacing="4px" alignItems={'flex-start'}>
-                  <Text fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
-                    {toursTitle7}
-                  </Text>
+                  <Link href={`/tourism/history`} style={{ textDecoration: 'none' }}>
+                    <Text cursor="pointer" fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
+                      {toursTitle7}
+                    </Text>
+                  </Link>
                   <Text
                     width={{ base: 'auto', lg: '372px' }}
                     fontSize={{ base: '10px', md: '20px' }}
@@ -224,28 +227,6 @@ const TourVisit = () => {
                 </VStack>
               </Stack>
             </SimpleGrid>
-
-            {/* <Box
-              width={{ md: 'auto', lg: 'auto' }}
-              mt={{ base: '70px', md: '100px', lg: 'auto' }}
-              mb={{ lg: 'auto' }}
-            >
-              <Carousel infiniteLoop showArrows={false} showIndicators={false} autoPlay>
-                {tours?.map((slide) => {
-                  return (
-                    <>
-                      <Image
-                        width={{ base: '65px', md: '214px', lg: '315px' }}
-                        height={{ base: '65px', md: '214px', lg: '315px' }}
-                        src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/storage/images/${slide.image.name}`}
-                        alt={slide.desc}
-                        borderRadius="10"
-                      />
-                    </>
-                  );
-                })}
-              </Carousel>
-            </Box> */}
           </Flex>
         </Box>
       </Box>
