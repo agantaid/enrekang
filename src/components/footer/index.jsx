@@ -43,21 +43,16 @@ const Footer = ({ settings }) => {
                   src="/logo-dispopar.png"
                   alt="Logo Dispopar"
                 />
-                <Image
-                  w="156.44px"
-                  h="65px"
-                  src="/ico-wonderfulcolor.png"
-                  alt="Wonderful Indonesia"
-                />
+                <Image w="156.44px" h="65px" src="/ico-wonderful.png" alt="Wonderful Indonesia" />
               </Stack>
               <Stack direction={'row'} spacing={{ base: '20px', md: '56px' }}>
                 <Image
                   w="99.84px"
                   h="65px"
-                  src="/ico-enrekang-journey.png"
+                  src="/ico-enrekang.png"
                   alt="Enrekang endless Journey"
                 />
-                <Image w="151.91px" h="60px" src="/ico-dispoparcolor.png" alt="Dispopar Enrekang" />
+                <Image w="151.91px" h="60px" src="/icon-dispopar.png" alt="Dispopar Enrekang" />
               </Stack>
             </Stack>
             <Text
@@ -243,7 +238,7 @@ const Footer = ({ settings }) => {
                 />
               </svg>
             </Stack>
-            <Text fontSize={'15px'} fontWeight="500" color="#FFFEFE">
+            <Text fontSize={'14px'} fontWeight="500" color="#FFFEFE">
               Dispopar Enrekang Copyright 2023
             </Text>
           </HStack>
