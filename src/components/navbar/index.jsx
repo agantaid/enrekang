@@ -53,7 +53,11 @@ const Navbar = ({ pageTitle, lang }) => {
         <Flex direction={'row'} justifyContent="space-between" alignItems={'center'}>
           {/* logos */}
           <Link href="/" style={{ textDecoration: 'none' }}>
-            <Stack alignItems={'center'} direction={'row'} spacing="14px">
+            <Stack
+              alignItems={'center'}
+              direction={'row'}
+              spacing={{ sm: '14px', md: '18px', lg: '20px', xl: '50px' }}
+            >
               <Image
                 width={{ base: '60px', lg: '80px' }}
                 height={{ base: '60px', lg: '80px' }}
@@ -350,7 +354,7 @@ const Navbar = ({ pageTitle, lang }) => {
               </Stack>
 
               <InputGroup>
-                <InputLeftElement
+                {/* <InputLeftElement
                   pointerEvents="none"
                   // eslint-disable-next-line react/no-children-prop
                   children={<SearchIcon color="blackAlpha.900" />}
@@ -363,7 +367,7 @@ const Navbar = ({ pageTitle, lang }) => {
                   bgColor="#fff"
                   color={'blackAlpha.600'}
                   placeholder="Search"
-                />
+                /> */}
 
                 {/* lang setting */}
                 <Menu>

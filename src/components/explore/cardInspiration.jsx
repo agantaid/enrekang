@@ -33,7 +33,7 @@ const CardInspiration = ({ title, image, desc, link }) => {
       bgPosition={'center'}
       bgSize="cover"
       borderRadius={'15px'}
-      _hover={{ transitionDelay: '0.5s' }}
+      _hover={{ transitionDelay: '0.2s' }}
       onMouseOver={over}
       onMouseOut={out}
     >
