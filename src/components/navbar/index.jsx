@@ -1,6 +1,4 @@
-import { PhoneIcon, SearchIcon } from '@chakra-ui/icons';
 import {
-  Box,
   Button,
   Center,
   Divider,
@@ -8,15 +6,11 @@ import {
   DrawerBody,
   DrawerCloseButton,
   DrawerContent,
-  DrawerFooter,
-  DrawerHeader,
   DrawerOverlay,
   Flex,
   Hide,
   HStack,
-  Input,
   InputGroup,
-  InputLeftElement,
   Menu,
   MenuButton,
   MenuItem,
@@ -29,19 +23,19 @@ import {
   Image,
   Container,
 } from '@chakra-ui/react';
-// import Image from 'next/image';
 import { useRef } from 'react';
 import { useRouter } from 'next/router';
 import langHome from '../homepage/lang';
 import Head from 'next/head';
+import NextLink from 'next/link';
 
-const Navbar = ({ pageTitle, lang }) => {
+const Navbar = ({ pageTitle }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
 
   // lang
-  const { locale, locales, defaultLocale, asPath } = useRouter();
-  const { title1, title2, title3, button, button2, link, local } = langHome[locale];
+  const { locale, asPath } = useRouter();
+  const { title1, title2, title3, button, button2 } = langHome[locale];
 
   return (
     <>
@@ -52,32 +46,34 @@ const Navbar = ({ pageTitle, lang }) => {
       <Container maxW="6xl" my={'30px'}>
         <Flex direction={'row'} justifyContent="space-between" alignItems={'center'}>
           {/* logos */}
-          <Link href="/" style={{ textDecoration: 'none' }}>
-            <Stack
-              alignItems={'center'}
-              direction={'row'}
-              spacing={{ sm: '14px', md: '18px', lg: '20px', xl: '50px' }}
-            >
-              <Image
-                width={{ base: '60px', lg: '80px' }}
-                height={{ base: '60px', lg: '80px' }}
-                src="/logo-dispopar.png"
-                alt="logo-dispopar"
-              />
-              <Image
-                width={'163.57px'}
-                height={{ base: 'auto', md: '71px' }}
-                src="/ico-dispoparcolor2.png"
-                alt="Wonderful Indonesia"
-              />
-              {/* <Image
-                width={{base:'auto',md:'100%'}}
-                height={{ base: 'auto', md: '65px' }}
-                src="/ico-enrekang-journey.png"
-                alt="Enrekang Journey"
-              /> */}
-            </Stack>
-          </Link>
+          <NextLink href="/" locale={locale} passHref>
+            <Link style={{ textDecoration: 'none' }}>
+              <Stack
+                alignItems={'center'}
+                direction={'row'}
+                spacing={{ sm: '14px', md: '18px', lg: '20px', xl: '50px' }}
+              >
+                <Image
+                  width={{ base: '60px', lg: '80px' }}
+                  height={{ base: '60px', lg: '80px' }}
+                  src="/logo-dispopar.png"
+                  alt="logo-dispopar"
+                />
+                <Image
+                  width={'163.57px'}
+                  height={{ base: 'auto', md: '71px' }}
+                  src="/ico-dispoparcolor2.png"
+                  alt="Wonderful Indonesia"
+                />
+                {/* <Image
+                  width={{base:'auto',md:'100%'}}
+                  height={{ base: 'auto', md: '65px' }}
+                  src="/ico-enrekang-journey.png"
+                  alt="Enrekang Journey"
+                /> */}
+              </Stack>
+            </Link>
+          </NextLink>
 
           <Hide above="lg">
             <Menu>
@@ -140,22 +136,24 @@ const Navbar = ({ pageTitle, lang }) => {
                   bg: 'transparent',
                 }}
               >
-                <Link
-                  activeClassName={locale === 'en'}
-                  href={link}
-                  style={{ textDecoration: 'none' }}
-                  locale="en"
-                >
-                  {button}
-                </Link>
+                <NextLink href={asPath} locale="en" passHref>
+                  <Link
+                    activeClassName={locale === 'en'}
+                    href={asPath}
+                    style={{ textDecoration: 'none' }}
+                  >
+                    {button}
+                  </Link>
+                </NextLink>
               </MenuButton>
               <MenuList minW={'80px'}>
-                <Link activeClassName={locale === 'id'} href={link} locale={local}>
-                  <MenuItem>{button2}</MenuItem>
-                </Link>
+                <NextLink href={asPath} locale={locale === 'id' ? 'en' : 'id'} passHref>
+                  <Link activeClassName={locale === 'id'}>
+                    <MenuItem>{button2}</MenuItem>
+                  </Link>
+                </NextLink>
               </MenuList>
             </Menu>
-            {/* button burger */}
             <Button
               ref={btnRef}
               bgColor="transparent"
@@ -201,8 +199,6 @@ const Navbar = ({ pageTitle, lang }) => {
               <DrawerOverlay />
               <DrawerContent>
                 <DrawerCloseButton />
-                {/* <DrawerHeader>Create your account</DrawerHeader> */}
-
                 <DrawerBody>
                   <Flex
                     height="96vh"
@@ -213,15 +209,17 @@ const Navbar = ({ pageTitle, lang }) => {
                   >
                     <VStack spacing="34px">
                       <VStack spacing="22px">
-                        <Link href="/" style={{ textDecoration: 'none' }}>
-                          <Text fontSize={'24px'} fontWeight="700">
-                            {title1}
-                          </Text>
-                        </Link>
+                        <NextLink href="/" locale={locale} passHref>
+                          <Link style={{ textDecoration: 'none' }}>
+                            <Text fontSize={'24px'} fontWeight="700">
+                              {title1}
+                            </Text>
+                          </Link>
+                        </NextLink>
                         <Divider border="2px solid #C6C5C5" />
                       </VStack>
                       <VStack spacing="22px">
-                        <Link href="#visit-populer" style={{ textDecoration: 'none' }}>
+                        <Link href="/#visit-populer" style={{ textDecoration: 'none' }}>
                           <Text fontSize={'24px'} fontWeight="700">
                             {title2}
                           </Text>
@@ -229,7 +227,7 @@ const Navbar = ({ pageTitle, lang }) => {
                         <Divider border="2px solid #C6C5C5" />
                       </VStack>
                       <VStack spacing="22px">
-                        <Link href="#footer" style={{ textDecoration: 'none' }}>
+                        <Link href="/#footer" style={{ textDecoration: 'none' }}>
                           <Text fontSize={'24px'} fontWeight="700">
                             {title3}
                           </Text>
@@ -237,11 +235,13 @@ const Navbar = ({ pageTitle, lang }) => {
                         <Divider border="2px solid #C6C5C5" />
                       </VStack>
                       <VStack spacing="22px">
-                        <Link href="/event" style={{ textDecoration: 'none' }}>
-                          <Text fontSize={'24px'} fontWeight="700">
-                            Event
-                          </Text>
-                        </Link>
+                        <NextLink href="/event" locale={locale} passHref>
+                          <Link style={{ textDecoration: 'none' }}>
+                            <Text fontSize={'24px'} fontWeight="700">
+                              Event
+                            </Text>
+                          </Link>
+                        </NextLink>
                         <Divider border="2px solid #C6C5C5" />
                       </VStack>
                       <HStack spacing="26px">
@@ -304,7 +304,6 @@ const Navbar = ({ pageTitle, lang }) => {
                         </Stack>
                       </HStack>
                     </VStack>
-
                     <Center mt="100px">
                       <Stack direction={'column'} spacing="6px">
                         <Image
@@ -317,12 +316,6 @@ const Navbar = ({ pageTitle, lang }) => {
                     </Center>
                   </Flex>
                 </DrawerBody>
-
-                {/* <DrawerFooter>
-                            <Button variant='outline' mr={3} onClick={onClose}>
-                            Close
-                            </Button>
-                        </DrawerFooter> */}
               </DrawerContent>
             </Drawer>
           </Hide>
@@ -331,45 +324,32 @@ const Navbar = ({ pageTitle, lang }) => {
           <Hide below="lg">
             <Stack direction={'row'} spacing={'43px'}>
               <Stack direction={'row'} spacing={{ lg: '18px', xl: '57px' }}>
-                <Link href="/" style={{ textDecoration: 'none' }}>
-                  <Text color="#000000" fontSize={'20px'} fontWeight="500" fontFamily={'Inter'}>
-                    {title1}
-                  </Text>
-                </Link>
-                <Link href="#visit-populer" style={{ textDecoration: 'none' }}>
+                <NextLink href="/" locale={locale} passHref>
+                  <Link style={{ textDecoration: 'none' }}>
+                    <Text color="#000000" fontSize={'20px'} fontWeight="500" fontFamily={'Inter'}>
+                      {title1}
+                    </Text>
+                  </Link>
+                </NextLink>
+                <Link href="/#visit-populer" style={{ textDecoration: 'none' }} locale={locale}>
                   <Text color="#000000" fontSize={'20px'} fontWeight="500" fontFamily={'Inter'}>
                     {title2}
                   </Text>
                 </Link>
-                <Link href="#footer" style={{ textDecoration: 'none' }}>
+                <Link href="/#footer" style={{ textDecoration: 'none' }} locale={locale}>
                   <Text color="#000000" fontSize={'20px'} fontWeight="500" fontFamily={'Inter'}>
                     {title3}
                   </Text>
                 </Link>
-                <Link href="/event" style={{ textDecoration: 'none' }}>
-                  <Text color="#000000" fontSize={'20px'} fontWeight="500" fontFamily={'Inter'}>
-                    Event
-                  </Text>
-                </Link>
+                <NextLink href="/event" locale={locale} passHref>
+                  <Link style={{ textDecoration: 'none' }}>
+                    <Text color="#000000" fontSize={'20px'} fontWeight="500" fontFamily={'Inter'}>
+                      Event
+                    </Text>
+                  </Link>
+                </NextLink>
               </Stack>
-
               <InputGroup>
-                {/* <InputLeftElement
-                  pointerEvents="none"
-                  // eslint-disable-next-line react/no-children-prop
-                  children={<SearchIcon color="blackAlpha.900" />}
-                />
-                <Input
-                  type="text"
-                  borderRadius={'10px'}
-                  width="178px"
-                  height={'38px'}
-                  bgColor="#fff"
-                  color={'blackAlpha.600'}
-                  placeholder="Search"
-                /> */}
-
-                {/* lang setting */}
                 <Menu>
                   <MenuButton
                     as={Button}
@@ -445,24 +425,18 @@ const Navbar = ({ pageTitle, lang }) => {
                       bg: 'transparent',
                     }}
                   >
-                    <Link
-                      activeClassName={locale === 'en'}
-                      style={{ textDecoration: 'none' }}
-                      href={link}
-                      locale="en"
-                    >
-                      {button}
-                    </Link>
+                    <NextLink href={asPath} locale="en" passHref>
+                      <Link activeClassName={locale === 'en'} style={{ textDecoration: 'none' }}>
+                        {button}
+                      </Link>
+                    </NextLink>
                   </MenuButton>
                   <MenuList>
-                    <Link
-                      activeClassName={locale === 'id'}
-                      style={{ textDecoration: 'none' }}
-                      href={link}
-                      locale="id"
-                    >
-                      <MenuItem>{button2}</MenuItem>
-                    </Link>
+                    <NextLink href={asPath} locale={locale === 'id' ? 'en' : 'id'} passHref>
+                      <Link activeClassName={locale === 'id'} style={{ textDecoration: 'none' }}>
+                        <MenuItem>{button2}</MenuItem>
+                      </Link>
+                    </NextLink>
                   </MenuList>
                 </Menu>
               </InputGroup>
