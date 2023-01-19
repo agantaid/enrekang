@@ -13,8 +13,10 @@ import {
   Flex,
 } from '@chakra-ui/react';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 
-const CardInspiration = ({ title, image, desc, link }) => {
+const CardInspiration = ({ title, image, desc, link, id }) => {
+  const router = useRouter();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isVisible, setIsVisible] = useState(false);
 
@@ -24,6 +26,10 @@ const CardInspiration = ({ title, image, desc, link }) => {
   function out(e) {
     setIsVisible(false);
   }
+  const handleClick = () => {
+    router.push(`/view-destinasi/${id}`);
+  };
+
   return (
     <Box
       width={'196px'}
@@ -72,7 +78,7 @@ const CardInspiration = ({ title, image, desc, link }) => {
                     {desc}
                   </Text>
                 </Box>
-                <Link href={link} target="_blank" style={{ textDecoration: 'none' }}>
+                {/* <Link href={link} target="_blank" style={{ textDecoration: 'none' }}>
                   <Button
                     rightIcon={
                       <svg
@@ -103,6 +109,7 @@ const CardInspiration = ({ title, image, desc, link }) => {
                         />
                       </svg>
                     }
+                    onClick={handleClick} 
                     height="48px"
                     width="100%"
                     bgColor={'#8AD440'}
@@ -119,7 +126,7 @@ const CardInspiration = ({ title, image, desc, link }) => {
                   >
                     See Destination
                   </Button>
-                </Link>
+                </Link> */}
               </Flex>
             </Flex>
           </ModalBody>
