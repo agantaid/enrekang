@@ -105,7 +105,7 @@ const langHome = {
     downloadButton: 'Unduh sekarang',
     // footer
     footerDesc:
-      'Jl. Pancaitana Bungawalie, No.4 Galonta Ward, Kabupaten Enrekang, Kota Enrekanag, Sulawesi Selatan',
+      'Jl. Pancaitana Bungawalie, No.4 Galonta Ward, Kabupaten Enrekang, Kota Enrekang, Sulawesi Selatan',
     footerContact: 'Kontak',
   },
 };

@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "id.dispoparenrekang.www.twa",
+      "sha256_cert_fingerprints": [
+        "28:3E:0C:47:47:A7:18:DD:36:49:FC:74:EA:E7:C7:1A:5F:FD:DA:9A:E6:9B:C7:C7:2C:14:74:CF:C4:F0:3D:BE"
+      ]
+    }
+  }
+]
