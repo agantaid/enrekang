@@ -42,6 +42,8 @@ const langHome = {
     findDesc:
       'Find a tourist spot you want to visit, lets find it now by clicking the button below',
     findButton: 'Find Now',
+    // watchpopular
+    titleWatch: 'Watch Popular Tours',
     // testimonial
     testiTitle: 'What they say',
     // download
@@ -97,6 +99,8 @@ const langHome = {
     findDesc:
       'Temukan tempat wisata yang ingin anda kunjungi, ayo temukan sekarang dengan mengklik tombol dibawah',
     findButton: 'Cari Sekarang',
+    // watchpopular
+    titleWatch: 'Tonton Wisata Populer',
     // testimonial
     testiTitle: 'Apa yang mereka katakan',
     // download

@@ -7,11 +7,12 @@ const TempatWisata = (props) => {
   // lang
   const { locale, locales, defaultLocale } = useRouter();
   const { visitTitle, visitDesc } = langHome[locale];
+
   return (
     <Box>
       <Center>
         <VStack spacing={'4px'} pt="32px" pb="38px">
-          <Text fontSize={{ base: '18px', md: '40px' }} fontWeight="600">
+          <Text fontSize={{ base: '18px', md: '36px' }} fontWeight="600">
             {visitTitle}
           </Text>
           <Text fontSize={{ base: '10px', md: '16px' }} fontWeight="400">

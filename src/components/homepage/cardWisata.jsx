@@ -22,7 +22,7 @@ const CardWisata = ({ image, title = 'nama', id }) => {
       bgColor={'#FFFEFE'}
     >
       <Image
-        width={{ md: '196px', lg: '270px' }}
+        width={{ base: '155px', md: '196px', lg: '270px' }}
         height="184px"
         src={image}
         alt="wisata-1"

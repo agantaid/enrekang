@@ -59,7 +59,7 @@ const TourVisit = () => {
             textAlign={'left'}
           >
             <Center mb="40px">
-              <Text fontWeight={'600'} fontSize={{ base: '16px', md: '28px', lg: '40px' }}>
+              <Text fontWeight={'600'} fontSize={{ base: '16px', md: '28px', lg: '36px' }}>
                 {toursTitle}
               </Text>
             </Center>
@@ -78,13 +78,19 @@ const TourVisit = () => {
                 />
                 <VStack spacing="4px" alignItems={'flex-start'}>
                   <Link href={`/tourism/nature`} style={{ textDecoration: 'none' }}>
-                    <Text cursor="pointer" fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
+                    <Text
+                      cursor="pointer"
+                      fontSize={{ base: '13px', md: '20px' }}
+                      color="#000000"
+                      fontWeight="600"
+                    >
                       {toursTitle1}
                     </Text>
                   </Link>
                   <Text
                     width={{ base: 'auto', lg: '372px' }}
-                    fontSize={{ base: '10px', md: '20px' }}
+                    fontSize={{ base: '10px', md: '16px' }}
+                    color="#454545"
                     fontWeight="400"
                   >
                     {toursDesc1}
@@ -100,13 +106,19 @@ const TourVisit = () => {
                 />
                 <VStack spacing="4px" alignItems={'flex-start'}>
                   <Link href={`/tourism/culture`} style={{ textDecoration: 'none' }}>
-                    <Text cursor="pointer" fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
+                    <Text
+                      cursor="pointer"
+                      fontSize={{ base: '13px', md: '20px' }}
+                      color="#000000"
+                      fontWeight="600"
+                    >
                       {toursTitle2}
                     </Text>
                   </Link>
                   <Text
                     width={{ base: 'auto', lg: '372px' }}
-                    fontSize={{ base: '10px', md: '20px' }}
+                    fontSize={{ base: '10px', md: '16px' }}
+                    color="#454545"
                     fontWeight="400"
                   >
                     {toursDesc2}
@@ -122,13 +134,19 @@ const TourVisit = () => {
                 />
                 <VStack spacing="4px" alignItems={'flex-start'}>
                   <Link href={`/tourism/tourist`} style={{ textDecoration: 'none' }}>
-                    <Text cursor="pointer" fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
+                    <Text
+                      cursor="pointer"
+                      fontSize={{ base: '13px', md: '20px' }}
+                      color="#000000"
+                      fontWeight="600"
+                    >
                       {toursTitle3}
                     </Text>
                   </Link>
                   <Text
                     width={{ base: 'auto', lg: '372px' }}
-                    fontSize={{ base: '10px', md: '20px' }}
+                    fontSize={{ base: '10px', md: '16px' }}
+                    color="#454545"
                     fontWeight="400"
                   >
                     {toursDesc3}
@@ -144,13 +162,19 @@ const TourVisit = () => {
                 />
                 <VStack spacing="4px" alignItems={'flex-start'}>
                   <Link href={`/tourism/manmade`} style={{ textDecoration: 'none' }}>
-                    <Text cursor="pointer" fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
+                    <Text
+                      cursor="pointer"
+                      fontSize={{ base: '13px', md: '20px' }}
+                      color="#000000"
+                      fontWeight="600"
+                    >
                       {toursTitle4}
                     </Text>
                   </Link>
                   <Text
                     width={{ base: 'auto', lg: '372px' }}
-                    fontSize={{ base: '10px', md: '20px' }}
+                    fontSize={{ base: '10px', md: '16px' }}
+                    color="#454545"
                     fontWeight="400"
                   >
                     {toursDesc4}
@@ -166,13 +190,19 @@ const TourVisit = () => {
                 />
                 <VStack spacing="4px" alignItems={'flex-start'}>
                   <Link href={`/tourism/culinary`} style={{ textDecoration: 'none' }}>
-                    <Text cursor="pointer" fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
+                    <Text
+                      cursor="pointer"
+                      fontSize={{ base: '13px', md: '20px' }}
+                      color="#000000"
+                      fontWeight="600"
+                    >
                       {toursTitle5}
                     </Text>
                   </Link>
                   <Text
                     width={{ base: 'auto', lg: '372px' }}
-                    fontSize={{ base: '10px', md: '20px' }}
+                    fontSize={{ base: '10px', md: '16px' }}
+                    color="#454545"
                     fontWeight="400"
                   >
                     {toursDesc5}
@@ -188,13 +218,19 @@ const TourVisit = () => {
                 />
                 <VStack spacing="4px" alignItems={'flex-start'}>
                   <Link href={`/tourism/special`} style={{ textDecoration: 'none' }}>
-                    <Text cursor="pointer" fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
+                    <Text
+                      cursor="pointer"
+                      fontSize={{ base: '13px', md: '20px' }}
+                      color="#000000"
+                      fontWeight="600"
+                    >
                       {toursTitle6}
                     </Text>
                   </Link>
                   <Text
                     width={{ base: 'auto', lg: '372px' }}
-                    fontSize={{ base: '10px', md: '20px' }}
+                    fontSize={{ base: '10px', md: '16px' }}
+                    color="#454545"
                     fontWeight="400"
                   >
                     {toursDesc6}
@@ -213,13 +249,19 @@ const TourVisit = () => {
                 />
                 <VStack spacing="4px" alignItems={'flex-start'}>
                   <Link href={`/tourism/history`} style={{ textDecoration: 'none' }}>
-                    <Text cursor="pointer" fontSize={{ base: '13px', md: '24px' }} fontWeight="600">
+                    <Text
+                      cursor="pointer"
+                      fontSize={{ base: '13px', md: '20px' }}
+                      color="#000000"
+                      fontWeight="600"
+                    >
                       {toursTitle7}
                     </Text>
                   </Link>
                   <Text
                     width={{ base: 'auto', lg: '372px' }}
-                    fontSize={{ base: '10px', md: '20px' }}
+                    fontSize={{ base: '10px', md: '16px' }}
+                    color="#454545"
                     fontWeight="400"
                   >
                     {toursDesc7}

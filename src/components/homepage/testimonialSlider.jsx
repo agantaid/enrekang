@@ -29,15 +29,15 @@ const TestimonialSlider = () => {
   }, []);
 
   return (
-    <Container maxW={'8xl'}>
-      <Box
-        mt={{ base: '35px', lg: '65px' }}
-        mb={{ base: '-85px', md: '-85px', lg: '0px' }}
-        bgColor={'#F5F5F5'}
-        py="65px"
-        pl={{ base: '0px', md: '20px', xl: '202px' }}
-        pr={{ base: '0px', md: '20px', xl: '167px' }}
-      >
+    <Box
+      mt={{ base: '35px', lg: '65px' }}
+      mb={{ base: '-85px', md: '-85px', lg: '0px' }}
+      bgColor={'#F5F5F5'}
+      py="65px"
+      pl={{ base: '0px', md: '20px', xl: '202px' }}
+      pr={{ base: '0px', md: '20px', xl: '167px' }}
+    >
+      <Container maxW={'6xl'}>
         <Text fontSize={{ base: '18px', md: '40px' }} fontWeight="600" mb="17px">
           {testiTitle}
         </Text>
@@ -56,8 +56,8 @@ const TestimonialSlider = () => {
             </Box>
           ))}
         </Slider>
-      </Box>
-    </Container>
+      </Container>
+    </Box>
   );
 };
 
