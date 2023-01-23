@@ -11,6 +11,7 @@ import Hero from './hero';
 import TempatWisata from './tempat-wisata';
 import TestimonialSlider from './testimonialSlider';
 import TourVisit from './tour-visit';
+import WatchPopular from './watchPopular';
 import Youtube from './youtube';
 
 const HomePage = () => {
@@ -32,6 +33,7 @@ const HomePage = () => {
       <Youtube settings={settings} />
       <TempatWisata />
       <CariDestinasi />
+      <WatchPopular />
       <TestimonialSlider />
       <Hide below="lg">
         <Download />
