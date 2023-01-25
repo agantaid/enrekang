@@ -2,9 +2,11 @@ import axios from '@/utils/axios';
 import { Box, Button, Container, Input, Stack, Text, useToast } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import langHome from '../homepage/lang';
 
 const Comment = () => {
   const router = useRouter();
+  const { locale } = router;
   const { id } = router.query;
   const toast = useToast();
   const [name, setName] = useState('');
@@ -61,13 +63,13 @@ const Comment = () => {
       <Container maxW="6xl" pt="47px">
         <Box w={{ base: '100%', md: '364px' }}>
           <Text mb="20px" fontSize={'25px'} color="#fff">
-            Give Your Comments About This Destination
+            {langHome[locale].commentTitle}
           </Text>
           <form onSubmit={onSubmit}>
             <Stack direction={'column'} spacing="15px">
               <Input
                 type={'text'}
-                placeholder="Your Name"
+                placeholder={langHome[locale].commentName}
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -78,7 +80,7 @@ const Comment = () => {
               />
               <Input
                 type={'text'}
-                placeholder="Job Title"
+                placeholder={langHome[locale].commentJob}
                 required
                 value={job}
                 onChange={(e) => setJob(e.target.value)}
@@ -89,7 +91,7 @@ const Comment = () => {
               />
               <Input
                 type={'text'}
-                placeholder="Your Comment"
+                placeholder={langHome[locale].commentDesc}
                 required
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
@@ -121,7 +123,7 @@ const Comment = () => {
                     transform: 'scale(0.98)',
                   }}
                 >
-                  SEND
+                  {langHome[locale].commentBtn}
                 </Button>
               </Stack>
             </Stack>

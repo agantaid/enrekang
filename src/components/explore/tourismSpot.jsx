@@ -3,10 +3,15 @@ import Map from './Map';
 import styles from '../explore/Map/Map.module.css';
 import { useEffect, useState } from 'react';
 import axios from '@/utils/axios';
+import langHome from '../homepage/lang';
+import { useRouter } from 'next/router';
 
 const TourismSpot = ({ setLocation }) => {
   const [locations, setLocations] = useState([]);
   const DEFAULT_CENTER = [-3.5631279, 119.7612];
+
+  const router = useRouter();
+  const { locale } = router;
 
   useEffect(() => {
     axios.get('/api/v1/locations').then(({ data }) => setLocations(data.data));
@@ -42,14 +47,14 @@ const TourismSpot = ({ setLocation }) => {
             </Box>
             <Box>
               <Text fontSize={'40px'} fontWeight="500">
-                Choose your tourism spot
+                {langHome[locale].spotTitle}
               </Text>
               <Text my="8px" fontSize={'20px'} fontWeight="400">
-                Telusuri spot menarik di kabupaten Enrekang sekarang
+                {langHome[locale].spotDesc}
               </Text>
               <Select
                 onChange={(e) => setLocation(e.target.value)}
-                placeholder="Silahkan Pilih"
+                placeholder={langHome[locale].spotPilih}
                 size="lg"
                 shadow={'xl'}
               >

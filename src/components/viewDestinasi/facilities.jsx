@@ -1,17 +1,21 @@
 import { Box, Container, Flex, SimpleGrid, Text } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
+import langHome from '../homepage/lang';
 import CardFacilities from './cardFacilities';
 
 const Facilities = ({ facilities }) => {
+  const { locale } = useRouter();
+
   return (
     <Box mb="50px" mt={{ base: '252px', lg: '0px' }}>
       <Container maxW="6xl">
         <Flex direction={{ base: 'column', md: 'row' }} gap="32px">
           <Box maxW={'200px'} height={'222px'} mx={{ base: 'auto', md: '0px' }}>
             <Text fontSize={'24px'} fontWeight="500">
-              Available Facilities
+              {langHome[locale].facilTitle}
             </Text>
             <Text fontSize={'15px'} fontWeight="400" color="#454545" mt="64px">
-              Dapatkan Fasilitas menarik di sekitar destinasi
+              {langHome[locale].facilDesc}
             </Text>
           </Box>
           <SimpleGrid

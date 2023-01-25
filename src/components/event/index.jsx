@@ -1,10 +1,15 @@
 import axios from '@/utils/axios';
 import { Box, Container, Flex, HStack, Link, SimpleGrid, Stack, Text } from '@chakra-ui/react';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import langHome from '../homepage/lang';
 import CardEvent from './cardEvent';
 
 const Event = () => {
   const [events, setEvents] = useState();
+  const router = useRouter();
+  const { locale } = router;
 
   useEffect(() => {
     axios.get('/api/v1/events').then(({ data }) => setEvents(data.data));
@@ -12,6 +17,9 @@ const Event = () => {
 
   return (
     <>
+      <Head>
+        <title>Dispopar Events</title>
+      </Head>
       <Container maxW="6xl" mt={'60px'} pb="100px">
         <Flex direction={'column'}>
           <Box>
@@ -32,7 +40,7 @@ const Event = () => {
                   </svg>
                 </Stack>
                 <Text fontSize={'16px'} fontWeight="500" color={'#454545'}>
-                  Kembali ke menu utama
+                  {langHome[locale].back}
                 </Text>
               </HStack>
             </Link>
@@ -56,13 +64,13 @@ const Event = () => {
                     </svg>
                   </Stack>
                   <Text fontSize={'32px'} fontWeight="600">
-                    Kalender Event
+                    {langHome[locale].eventTitle}
                   </Text>
                 </HStack>
               </Flex>
               <Box mt="25px" ml="20px">
                 <Text fontSize={'20px'} fontWeight="600">
-                  Event tersedia
+                  {langHome[locale].eventSubTitle}
                 </Text>
                 <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="30px">
                   {events &&

@@ -1,6 +1,11 @@
 import { Box, Button, Card, CardBody, Flex, HStack, Image, Stack, Text } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
+import langHome from '../homepage/lang';
 
 const CardEvent = ({ title, desc, date, src }) => {
+  const router = useRouter();
+  const { locale } = router;
+
   return (
     <Card maxW="md" shadow={'md'}>
       <CardBody>
@@ -43,7 +48,7 @@ const CardEvent = ({ title, desc, date, src }) => {
                 transform: 'scale(0.98)',
               }}
             >
-              Going
+              {langHome[locale].eventBtn}
             </Button>
           </Flex>
         </Stack>
