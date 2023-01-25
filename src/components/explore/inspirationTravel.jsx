@@ -2,6 +2,7 @@ import axios from '@/utils/axios';
 import { Box, Container, SimpleGrid, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import langHome from '../homepage/lang';
 import CardInspiration from './cardInspiration';
 
 const InspirtaionTravel = () => {
@@ -17,10 +18,10 @@ const InspirtaionTravel = () => {
       <Container maxW={'6xl'} pb="54px">
         <Box>
           <Text fontSize={'40px'} fontWeight="500">
-            Travel Inspiration
+            {langHome[locale].inspirasiTitle}
           </Text>
           <Text fontSize={'20px'} fontWeight="400" mt="4px" mb="36px">
-            Beberapa tempat yang bisa dijadikan inspirasi untuk dikunjungi
+            {langHome[locale].inspirasiDesc}
           </Text>
         </Box>
         <SimpleGrid justifyItems={'center'} columns={{ base: 1, md: 3, lg: 4, xl: 5 }} spacing={22}>

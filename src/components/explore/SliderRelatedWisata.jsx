@@ -7,6 +7,7 @@ import { Box, Image, Text } from '@chakra-ui/react';
 import '../../../node_modules/slick-carousel/slick/slick-theme.css';
 import { useRouter } from 'next/router';
 import axios from '@/utils/axios';
+import langHome from '../homepage/lang';
 
 export default function SliderRelatedWisata({ location }) {
   const [data, setData] = useState([]);
@@ -56,7 +57,7 @@ export default function SliderRelatedWisata({ location }) {
     <>
       <Box px={{ base: '4px', md: '20px', xl: '120px' }}>
         <Text fontSize={{ base: '12px', md: '20px' }} fontWeight="400">
-          Related Results
+          {langHome[locale].spotRelate}
         </Text>
         <Slider {...settings}>
           {data?.map((item) => (

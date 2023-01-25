@@ -14,9 +14,9 @@ const CardFacilities = ({ image, title }) => {
       bgPosition="center"
       bgSize={'cover'}
     >
-      <Text fontSize={'16px'} fontWeight="500" fontFamily={'Inter'} color="#000">
+      {/* <Text fontSize={'16px'} fontWeight="500" fontFamily={'Inter'} color="#000">
         {title}
-      </Text>
+      </Text> */}
     </Box>
   );
 };

@@ -1,4 +1,5 @@
 import CardWisata from '@/components/homepage/cardWisata';
+import langHome from '@/components/homepage/lang';
 import axios from '@/utils/axios';
 import { Box, Container, Flex, HStack, Link, SimpleGrid, Stack, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
@@ -6,7 +7,8 @@ import { useEffect, useState } from 'react';
 
 const Tourism = () => {
   const router = useRouter();
-  const { id, locale } = router.query;
+  const { id } = router.query;
+  const { locale } = router;
   const [tourism, setTourism] = useState([]);
 
   useEffect(() => {
@@ -36,7 +38,7 @@ const Tourism = () => {
                   </svg>
                 </Stack>
                 <Text fontSize={'16px'} fontWeight="500" color={'#454545'}>
-                  Kembali ke menu utama
+                  {langHome[locale].back}
                 </Text>
               </HStack>
             </Link>
@@ -46,7 +48,7 @@ const Tourism = () => {
               <Flex justifyContent={'space-between'}>
                 <HStack spacing="18px">
                   <Text fontSize={'32px'} fontWeight="600">
-                    {id?.charAt(0).toUpperCase() + id?.slice(1)} Tourism
+                    {langHome[locale][id]}
                   </Text>
                 </HStack>
               </Flex>
