@@ -1,5 +1,5 @@
 import { Box, Center } from '@chakra-ui/react';
-import { Player } from 'video-react';
+import { BigPlayButton, Player } from 'video-react';
 
 const CardWatch = ({ src }) => {
   return (
@@ -8,7 +8,10 @@ const CardWatch = ({ src }) => {
         width={{ base: '100%', md: '650px', lg: '650px' }}
         height={{ base: '160px', md: '200px', lg: '420px' }}
       >
-        <Player poster="/bg-hero-home.jpg" playsInline src={src} />
+        {/* poster="/bg-hero-home.jpg" add thumbnail as property on Player */}
+        <Player playsInline src={src}>
+          <BigPlayButton position="center" />
+        </Player>
       </Box>
     </Center>
   );
