@@ -67,11 +67,15 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
+    <td align="center"><a href="https://github.com/MuhammadFahrul09">
+        <img src="https://avatars.githubusercontent.com/u/108345250?v=4" width="100px;" alt=""/><br /><sub><b>Muhammad Fahrullah</b></sub></a><br />
+        <a href="#projectManagement" title="Documentation">📖</a>
+        <a href="#translation" title="Translation">🌍</a>
+    </td>
     <td align="center"><a href="https://github.com/Yassar021">
         <img src="https://avatars.githubusercontent.com/u/23151286?v=4" width="100px;" alt=""/><br /><sub><b>Ahmad Muyassar</b></sub></a><br />
         <a href="https://github.com/Yassar021/enrekang/commits" title="Code">💻</a> 
         <a href="#projectManagement" title="Documentation">📖</a> 
-        <a href="#translation" title="Translation">🌍</a>
     </td>
     <td align="center"><a href="https://github.com/suarminrais">
         <img src="https://avatars.githubusercontent.com/u/44806239?v=4" width="100px;" alt=""/><br /><sub><b>Suarmin Rais</b></sub></a><br />
