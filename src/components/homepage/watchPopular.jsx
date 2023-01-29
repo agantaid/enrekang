@@ -1,8 +1,6 @@
-import { AspectRatio, Box, Center, Image, Text } from '@chakra-ui/react';
+import { Center, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
-import ReactPlayer from 'react-player';
 import Slider from 'react-slick';
-import { Player } from 'video-react';
 import langHome from './lang';
 import '../../../node_modules/video-react/dist/video-react.css';
 import CardWatch from './cardWatch';
@@ -10,9 +8,9 @@ import CardWatch from './cardWatch';
 // https://video-react.js.org/components/player/
 // player di react
 
-const WatchPopular = () => {
+const WatchPopular = ({ videos }) => {
   // lang
-  const { locale, locales, defaultLocale } = useRouter();
+  const { locale } = useRouter();
   const { titleWatch } = langHome[locale];
 
   const settings = {
@@ -58,9 +56,12 @@ const WatchPopular = () => {
         </Text>
       </Center>
       <Slider {...settings}>
-        <CardWatch />
-        <CardWatch />
-        <CardWatch />
+        {videos?.map((video) => (
+          <CardWatch
+            key={video.id}
+            src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/storage/videos/${video?.name}`}
+          />
+        ))}
       </Slider>
     </div>
   );
