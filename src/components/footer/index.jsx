@@ -20,7 +20,7 @@ const Footer = ({ settings }) => {
   return (
     <Box
       id="footer"
-      height={{ base: '100%', md: 'auto', lg: '443px' }}
+      height={{ base: '100%', md: 'auto', lg: 'auto' }}
       pb="80px"
       width="auto"
       bgColor="#222222"
