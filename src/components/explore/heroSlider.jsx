@@ -26,7 +26,7 @@ const HeroSlider = ({ slides }) => {
       >
         {/* <Navbar pageTitle={'Explore Maps'} /> */}
       </Box>
-      <Carousel infiniteLoop height="516px">
+      <Carousel swipeable={false} infiniteLoop height="516px">
         {slides?.map((slide) => {
           return (
             <>
