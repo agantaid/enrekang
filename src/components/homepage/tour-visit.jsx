@@ -49,7 +49,7 @@ const TourVisit = () => {
           width={{ base: '80%', md: '100%' }}
           height={'auto'}
           pl={{ base: '10px', md: '20px', xl: '40px' }}
-          py={{ base: '12px', md: '120px', lg: '120px' }}
+          py={{ base: '12px', md: '60px', lg: '120px' }}
           pr={{ base: '10px', md: '20px', xl: '40px' }}
         >
           <Flex
