@@ -30,7 +30,12 @@ import Head from 'next/head';
 import NextLink from 'next/link';
 
 const Navbar = ({ pageTitle }) => {
+  const router = useRouter();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const handleClick = (link) => {
+    onClose();
+    router.replace(link);
+  };
   const btnRef = useRef();
 
   // lang
@@ -155,7 +160,6 @@ const Navbar = ({ pageTitle }) => {
               </MenuList>
             </Menu>
             <Button
-              ref={btnRef}
               bgColor="transparent"
               onClick={onOpen}
               _hover={{ bg: 'transparent' }}
@@ -195,7 +199,7 @@ const Navbar = ({ pageTitle }) => {
                 </svg>
               }
             ></Button>
-            <Drawer isOpen={isOpen} placement="left" onClose={onClose} finalFocusRef={btnRef}>
+            <Drawer isOpen={isOpen} placement="left" onClose={onClose} autoFocus="false">
               <DrawerOverlay />
               <DrawerContent>
                 <DrawerCloseButton />
@@ -219,7 +223,10 @@ const Navbar = ({ pageTitle }) => {
                         <Divider border="2px solid #C6C5C5" />
                       </VStack>
                       <VStack spacing="22px">
-                        <Link href="/#visit-populer" style={{ textDecoration: 'none' }}>
+                        <Link
+                          style={{ textDecoration: 'none' }}
+                          onClick={() => handleClick('/#visit-populer')}
+                        >
                           <Text fontSize={'24px'} fontWeight="700">
                             {title2}
                           </Text>
@@ -227,7 +234,11 @@ const Navbar = ({ pageTitle }) => {
                         <Divider border="2px solid #C6C5C5" />
                       </VStack>
                       <VStack spacing="22px">
-                        <Link href="/#footer" style={{ textDecoration: 'none' }}>
+                        <Link
+                          href="/#footer"
+                          style={{ textDecoration: 'none' }}
+                          onClick={() => handleClick('/#footer')}
+                        >
                           <Text fontSize={'24px'} fontWeight="700">
                             {title3}
                           </Text>
