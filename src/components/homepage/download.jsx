@@ -1,4 +1,5 @@
 import { Box, Button, Container, Flex, Image, Text } from '@chakra-ui/react';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import langHome from '../homepage/lang';
 
@@ -37,20 +38,22 @@ const Download = () => {
             >
               {downloadDesc}
             </Text>
-            <Button
-              height="52px"
-              width="310px"
-              shadow={'md'}
-              bgColor={'rgba(255, 254, 254, 0.8)'}
-              color="#8AD440"
-              _hover={{ bg: 'rgba(255, 254, 254, 0.8)' }}
-              _active={{
-                bg: 'rgba(255, 254, 254, 0.8)',
-                transform: 'scale(0.98)',
-              }}
-            >
-              {downloadButton}
-            </Button>
+            <Link href="https://play.google.com/store/apps/details?id=id.dispoparenrekang.twa">
+              <Button
+                height="52px"
+                width="310px"
+                shadow={'md'}
+                bgColor={'rgba(255, 254, 254, 0.8)'}
+                color="#8AD440"
+                _hover={{ bg: 'rgba(255, 254, 254, 0.8)' }}
+                _active={{
+                  bg: 'rgba(255, 254, 254, 0.8)',
+                  transform: 'scale(0.98)',
+                }}
+              >
+                {downloadButton}
+              </Button>
+            </Link>
           </Box>
           <Image
             mt="-204px"
